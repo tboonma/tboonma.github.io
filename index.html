@@ -21,7 +21,7 @@
   <div class="title">
     <div class="text-white h1 fw-bold">Hi, I'm <span id="typed"></span></div>
     <div class="text-white"><h3>Full-stack Developer</h3></div>
-    <div class="">
+    <div>
       <a href="https://www.linkedin.com/in/tboonma/" target="_blank" rel="Linkedin"><img class="hover-black" src="https://img.icons8.com/ios-glyphs/52/FFFFFF/linkedin.png"/></a>
       <a href="https://facebook.com/tboonmaeiei" target="_blank" rel="Facebook"><img class="hover-black" src="https://img.icons8.com/ios-glyphs/52/FFFFFF/facebook.png"/></a>
       <a href="https://twitter.com/Tboonmaeiei" target="_blank" rel="Twitter"><img class="hover-black" src="https://img.icons8.com/material/52/FFFFFF/twitter--v1.png"/></a>
@@ -36,13 +36,13 @@
     <!--
     <ul class="text-center filter-menu">
       <li class="filter-selected">All</li>
-      <li class="filter-item" v-for="lang in languageAccepted"> {{ lang.displayName }} </li>
+      <li class="filter-item" v-for="lang in languageAccepted" onclick="filterSelection('')"> {{ lang.displayName }} </li>
     </ul>
-  -->
+    -->
     <div class="container">
       <div class="row row-cols-1 row-cols-md-3">
         <div class="col p-3 mx-auto" v-for="repo in myRepos">
-          <div class="bg-white shadow-lg p-3">
+          <div class="bg-white shadow-lg p-3 scale-110">
             <div class="d-flex justify-content-center p-2">
               <img :src="repo.imgUrl" :alt="repo.title" width="64" height="64">
             </div>
@@ -51,12 +51,36 @@
                 <p class="text-center fw-bold h4"> {{ repo.title }} <span class="material-icons material-icons-outlined">launch</span></p>
               </a>
               <p class="text-center"> {{ repo.desc }} </p>
+              <div class="text-center">
+                <a :href="repo.repoUrl" class="underline hover-black text-black fs-6 font-monospace fw-lighter">View on GitHub<img class="hover-black" src="https://img.icons8.com/windows/36/000000/github.png"/></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div id="license">
+    <div class="text-center">
+      <h1 class="fw-bold">Licenses & Certificates</h1>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3">
+      <img src="assets/images/certificates/facebook-hacker-cup-2021.jpg" alt="Facebook Hacker Cup">
+    </div>
+  </div>
+  <footer class="bg-secondary row" style="padding-top: 10px; padding-bottom:10px;">
+    <div class="col-12 col-md-3 text-center">
+      <p class="text-white">Tawan Boonma</p>
+    </div>
+    <div class="col-md-6"></div>
+    <div class="col-12 col-md-3 text-center">
+        <a href="https://www.linkedin.com/in/tboonma/" target="_blank" rel="Linkedin"><img class="hover-black" src="https://img.icons8.com/ios-glyphs/36/FFFFFF/linkedin.png"/></a>
+        <a href="https://facebook.com/tboonmaeiei" target="_blank" rel="Facebook"><img class="hover-black" src="https://img.icons8.com/ios-glyphs/36/FFFFFF/facebook.png"/></a>
+        <a href="https://twitter.com/Tboonmaeiei" target="_blank" rel="Twitter"><img class="hover-black" src="https://img.icons8.com/material/36/FFFFFF/twitter--v1.png"/></a>
+        <a href="https://www.instagram.com/tboonma_" target="_blank" rel="Instagram"><img class="hover-black" src="https://img.icons8.com/material-outlined/36/FFFFFF/instagram-new--v1.png"/></a>
+        <a href="https://github.com/tboonma" target="_blank" rel="GitHub"><img class="hover-black" src="https://img.icons8.com/windows/36/FFFFFF/github.png"/></a>
+    </div>
+  </footer>
 </body>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
