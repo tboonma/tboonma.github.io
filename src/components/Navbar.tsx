@@ -6,7 +6,7 @@ const Navbar = () => {
     <div className="Navbar px-10 py-8 flex justify-between w-full fixed">
       <h1 className="text-xl title text-center">Tawan B.</h1>
       <div className="text-center text-xl hidden md:flex space-x-14 text-custom-blue">
-        <h2 className="">About me</h2>
+        <h2 className=""><a href="#about-me">About me</a></h2>
         <h2 className="">Skills</h2>
         <h2 className="">Portfolio</h2>
         <h2 className="">Contact</h2>
