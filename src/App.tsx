@@ -11,6 +11,9 @@ function App() {
     >
       <Navbar />
       <Home />
+      <div className="p-10 text-center">
+        <h1>Development In Progress</h1>
+      </div>
     </div>
   )
 }

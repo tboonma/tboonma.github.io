@@ -7,3 +7,29 @@
 
   background: rgba(8, 81, 149, 0.48);
 }
+
+#rectangle {
+  grid-column: col 2 / span 8;
+  grid-row: row 1 / span 10;
+  background: rgba(8, 81, 149, 0.48);
+}
+
+#profile-pic {
+  grid-column: col 1 / span 8;
+  grid-row: row 2 / span 10;
+}
+
+#profile-pic img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px 0px 0px 80px;
+}
+
+.Profile {
+  display: grid;
+  grid-template: repeat(11, [row] minmax(40px, 1fr)) / repeat(
+      9,
+      [col] minmax(0, 1fr)
+    );
+}

@@ -1,9 +1,10 @@
 import './Home.css'
+import MyPic from '../assets/img/me.jpg'
 
 const Home = () => {
   return (
-    <div className="flex h-screen justify-between items-center px-10">
-      <div className="space-y-3">
+    <div className="grid min-h-screen justify-between items-center px-10 md:grid-cols-5 gap-8 pt-28 md:pt-0">
+      <div className="space-y-3 md:col-span-3 text-center md:text-left">
         <h2 className="text-custom-blue text-3xl md:text-4xl">
           Welcome to my site
         </h2>
@@ -15,13 +16,20 @@ const Home = () => {
             Software <span className="text-custom-green">Engineer</span>
           </h1>
         </div>
-        <p className="text-custom-blue md:w-1/2">
+        <p className="text-custom-blue md:w-11/12">
           Full stack Software Engineer who also a Junior in Software and
           Knowledge Engineering at Kasetsart University. Right now I'm extremely
           busy with final exam and projects, developing this web soon.
         </p>
       </div>
-      <div></div>
+      <div className="md:col-span-2 flex justify-center">
+        <div className="Profile max-w-sm">
+          <div id="rectangle"></div>
+          <div id="profile-pic">
+            <img src={MyPic} alt="MainPicture" />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
