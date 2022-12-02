@@ -5,6 +5,7 @@ import {
 } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 import { MdWork } from 'react-icons/md'
+import './Experiences.css'
 
 export interface WorkExperience {
   positionName: string
@@ -108,10 +109,10 @@ const Experiences = () => {
         Work Experience
       </h2>
       <VerticalTimeline lineColor="#085195">
-        {experiences.reverse().map((exp, index) => {
+        {experiences.reverse().map((exp) => {
           return (
             <VerticalTimelineElement
-              className="vertical-timeline-element--work"
+              className="vertical-timeline-element--work element"
               contentStyle={{
                 background: 'rgb(33, 150, 243)',
                 color: '#fff',

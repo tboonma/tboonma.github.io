@@ -1,14 +1,13 @@
 import AboutMe from '../components/AboutMe'
 import Experiences from '../components/Experiences'
+import Projects from '../components/Projects'
 
 const Home = () => {
   return (
     <div>
       <AboutMe />
       <Experiences />
-      <div id="projects" className="p-10 text-center">
-        <h1>Development In Progress</h1>
-      </div>
+      <Projects />
       <div id="certificates" className="p-10 text-center">
         <h1>Development In Progress</h1>
       </div>
