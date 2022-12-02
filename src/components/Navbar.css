@@ -2,3 +2,7 @@
   color: #085195;
   font-weight: 700;
 }
+
+.Navbar {
+  z-index: 99;
+}
