@@ -5,7 +5,7 @@ const AboutMe = () => {
   return (
     <div
       id="about-me"
-      className="grid min-h-screen justify-between items-center px-10 md:grid-cols-5 gap-8 pt-28 md:pt-0"
+      className="grid justify-between items-center px-10 md:grid-cols-5 gap-8 pt-28 md:pt-32 pb-16 md:pb-24"
     >
       <div className="space-y-3 md:col-span-3 text-center md:text-left">
         <h2 className="text-custom-blue text-3xl md:text-4xl">
