@@ -60,3 +60,7 @@
 .text-custom-green {
   color: #2d9508;
 }
+
+.bg-translucent {
+  background-color: rgba(209, 213, 219, 0.35);
+}
