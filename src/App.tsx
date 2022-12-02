@@ -6,7 +6,7 @@ import Home from './pages/Home'
 function App() {
   return (
     <div
-      className="App min-h-screen"
+      className="App min-h-screen bg-white"
       style={{ backgroundImage: `url(${background})` }}
     >
       <Navbar />

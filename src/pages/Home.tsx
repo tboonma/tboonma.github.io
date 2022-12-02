@@ -1,12 +1,11 @@
 import AboutMe from '../components/AboutMe'
+import Experiences from '../components/Experiences'
 
 const Home = () => {
   return (
     <div>
       <AboutMe />
-      <div id="experiences" className="p-10 text-center">
-        <h1>Development In Progress</h1>
-      </div>
+      <Experiences />
       <div id="projects" className="p-10 text-center">
         <h1>Development In Progress</h1>
       </div>

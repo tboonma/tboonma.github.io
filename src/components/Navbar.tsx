@@ -6,7 +6,7 @@ const Navbar = () => {
   const [showBackground, setBackground] = useState<boolean>(false)
 
   const changeBackgroundColor = () => {
-    setBackground(window.scrollY >= 110)
+    setBackground(window.scrollY >= 80)
   }
   useEffect(() => {
     window.addEventListener('scroll', changeBackgroundColor)
