@@ -89,7 +89,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="grid place-content-center lg:hidden">
-        <HiBars3BottomRight className="w-6 h-6 cursor-pointer dark:text-white" />
+        <HiBars3BottomRight className="w-6 h-6 cursor-pointer text-clay border-white-seashell" />
       </div>
     </div>
   )
