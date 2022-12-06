@@ -26,17 +26,19 @@ const Navbar = () => {
     <div
       className={
         `Navbar px-10 py-6 flex justify-between w-full fixed duration-300` +
-        (showBackground ? ' dark:bg-black bg-white shadow-md ' : '')
+        (showBackground ? ' dark:bg-gray-shark bg-white shadow-md ' : '')
       }
     >
       <div className="title grid place-content-center w-1/6">
-        <div className="text-xl text-center">Tawan B.</div>
+        <div className="text-xl text-center text-blue-light dark:text-blue-dark">
+          Tawan B.
+        </div>
       </div>
-      <div className="text-center hidden lg:flex lg:items-center lg:justify-center space-x-8 text-custom-blue w-3/6">
+      <div className="text-center hidden lg:flex lg:items-center lg:justify-between w-3/6 px-10">
         <h2>
           <a
             href="#about-me"
-            className="text-custom-blue dark:text-white hover:text-slate-500 font-medium"
+            className="text-clay dark:text-white-seashell hover:text-slate-500 font-medium"
           >
             About me
           </a>
@@ -44,7 +46,7 @@ const Navbar = () => {
         <h2>
           <a
             href="#experiences"
-            className="text-custom-blue dark:text-white hover:text-slate-500"
+            className="text-clay dark:text-white hover:text-slate-500"
           >
             Experiences
           </a>
@@ -52,7 +54,7 @@ const Navbar = () => {
         <h2>
           <a
             href="#projects"
-            className="text-custom-blue dark:text-white hover:text-slate-500"
+            className="text-clay dark:text-white hover:text-slate-500"
           >
             Projects
           </a>
@@ -60,37 +62,34 @@ const Navbar = () => {
         <h2>
           <a
             href="#contact"
-            className="text-custom-blue dark:text-white hover:text-slate-500"
+            className="text-clay dark:text-white hover:text-slate-500"
           >
             Contact
           </a>
         </h2>
         <h2 className="">
-          <a
-            href=""
-            className="text-custom-blue dark:text-white hover:text-slate-500"
-          >
+          <a href="" className="text-clay dark:text-white hover:text-slate-500">
             ···
           </a>
         </h2>
       </div>
       <div className="hidden lg:flex lg:items-center lg:justify-center w-1/6">
         <div
-          className="hover:bg-slate-200 rounded-full cursor-pointer duration-300 p-2 mr-2"
+          className="text-clay hover:bg-gray-400 rounded-full cursor-pointer duration-300 p-2 mr-2"
           onClick={changeThemeHandler}
         >
           {store.isDarkMode ? (
             <MdOutlineDarkMode className="text-white text-2xl" />
           ) : (
-            <MdOutlineWbSunny className="text-custom-blue text-2xl" />
+            <MdOutlineWbSunny className="text-clay text-2xl" />
           )}
         </div>
-        <div className=" border-gray-500 rounded-md text-custom-blue dark:text-white border-2 h-full py-2 px-5">
+        <div className="text-clay border-white-seashell rounded-md dark:text-white border h-full py-2 px-5">
           Resume
         </div>
       </div>
       <div className="grid place-content-center lg:hidden">
-        <HiBars3BottomRight className="w-6 h-6 text-custom-blue cursor-pointer text-custom-blue dark:text-white" />
+        <HiBars3BottomRight className="w-6 h-6 cursor-pointer dark:text-white" />
       </div>
     </div>
   )

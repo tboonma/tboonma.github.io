@@ -16,7 +16,7 @@ const App = () => {
     <div
       className={
         `App min-h-screen duration-700` +
-        (isDarkMode ? ' dark dark-background' : ' bg-white')
+        (isDarkMode ? ' dark bg-gray-woodsmoke' : ' bg-white')
       }
     >
       <Navbar />
