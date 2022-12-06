@@ -84,7 +84,7 @@ const Navbar = () => {
             <MdOutlineWbSunny className="text-clay text-2xl" />
           )}
         </div>
-        <div className="text-clay border-white-seashell rounded-md dark:text-white border h-full py-2 px-5">
+        <div className="text-clay border-white-seashell rounded-lg dark:text-white border h-full py-2 px-5">
           Resume
         </div>
       </div>
