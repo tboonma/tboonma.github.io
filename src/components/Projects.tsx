@@ -16,20 +16,16 @@ const Projects = () => {
   }, [])
 
   return (
-    <div id="projects" className="Projects pt-28 px-10">
-      <h2
-        id="title"
-        className="text-custom-blue text-3xl md:text-4xl text-center pt-24 pb-10"
-      >
-        Projects
-      </h2>
-      <div className="grid md:grid-cols-3 gap-5">
-        <div className="bg-translucent shadow-md p-3 rounded-xl">
-          <p className="text-xl font-bold text-custom-blue2">Project name</p>
+    <div id="projects" className="Projects pt-24 px-10">
+      <div className="space-y-3 md:col-span-3 text-center md:text-left">
+        <div className="before:bg-gray-alto heading text-gray-nevada text-sm md:text-md tracking-extrawide flex items-center justify-center md:justify-start">
+          <p>MY WORKS</p>
         </div>
-        <div className="bg-translucent shadow-md p-3 rounded-xl">Hello</div>
-        <div className="bg-translucent shadow-md p-3 rounded-xl">Hello</div>
-        <div className="bg-translucent shadow-md p-3 rounded-xl">Hello</div>
+        <div>
+          <h1 className="font-bold text-clay dark:text-white-seashell text-3xl md:text-4xl">
+            Featured Portfolios
+          </h1>
+        </div>
       </div>
     </div>
   )

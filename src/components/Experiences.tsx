@@ -101,43 +101,17 @@ const Experiences = () => {
   }, [])
 
   return (
-    <div id="experiences" className="px-10">
-      <h2
-        id="title"
-        className="text-custom-blue text-3xl md:text-4xl text-center pt-24 pb-10 sha"
-      >
-        Work Experience
-      </h2>
-      <VerticalTimeline lineColor="#085195">
-        {experiences.reverse().map((exp) => {
-          return (
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work element"
-              contentStyle={{
-                background: 'rgb(33, 150, 243)',
-                color: '#fff',
-                boxShadow: '0 0'
-              }}
-              contentArrowStyle={{
-                borderRight: '7px solid  rgb(33, 150, 243)'
-              }}
-              date={GetExperiencePeriod(exp)}
-              iconStyle={GetCompanyIconComponent(exp.companyPic).iconStyle}
-              icon={GetCompanyIconComponent(exp.companyPic).icon}
-            >
-              <div className="vertical-timeline-element-title">
-                <h3 className="text-xl">{exp.positionName}</h3>
-                <h3 className="">{exp.employmentType}</h3>
-                <h3>{exp.companyName}</h3>
-              </div>
-              <h4 className="vertical-timeline-element-subtitle">
-                {exp.location}
-              </h4>
-              <p>{exp.description}</p>
-            </VerticalTimelineElement>
-          )
-        })}
-      </VerticalTimeline>
+    <div id="experiences" className="px-10 pt-24">
+      <div className="space-y-3 md:col-span-3 text-center md:text-left">
+        <div className="before:bg-gray-alto heading text-gray-nevada text-sm md:text-md tracking-extrawide flex items-center justify-center md:justify-start">
+          <p>CAREER PATH</p>
+        </div>
+        <div>
+          <h1 className="font-bold text-clay dark:text-white-seashell text-3xl md:text-4xl">
+            Work Experiences
+          </h1>
+        </div>
+      </div>
     </div>
   )
 }

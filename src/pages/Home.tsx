@@ -1,4 +1,7 @@
 import AboutMe from '../components/AboutMe'
+import Certificates from '../components/Certificates'
+import Contact from '../components/Contact'
+import Education from '../components/Education'
 import Experiences from '../components/Experiences'
 import Projects from '../components/Projects'
 
@@ -8,12 +11,9 @@ const Home = () => {
       <AboutMe />
       <Experiences />
       <Projects />
-      <div id="certificates" className="p-10 text-center">
-        <h1>Development In Progress</h1>
-      </div>
-      <div id="contact" className="p-10 text-center">
-        <h1>Development In Progress</h1>
-      </div>
+      <Education />
+      <Certificates />
+      <Contact />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import './AboutMe.css'
-import MyPic from '../assets/img/me.jpg'
+import MyPic from '../assets/img/profile-pic.jpg'
 import {
   SlSocialLinkedin,
   SlSocialFacebook,

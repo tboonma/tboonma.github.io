@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import { mobXStore } from './stores/MobXstore'
 import { inject, observer } from 'mobx-react'
 import { useEffect } from 'react'
+import Footer from './components/Footer'
 
 const App = () => {
   const { isDarkMode, setDarkMode } = mobXStore!
@@ -26,6 +27,7 @@ const App = () => {
     >
       <Navbar />
       <Home />
+      <Footer />
     </div>
   )
 }
