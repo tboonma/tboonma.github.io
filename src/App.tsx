@@ -10,8 +10,13 @@ const App = () => {
   const { isDarkMode, setDarkMode } = mobXStore!
 
   useEffect(() => {
-    console.log('From App')
-  }, [setDarkMode])
+    const systemDarkScheme = window.matchMedia('(prefers-color-scheme: dark)')
+    setDarkMode(systemDarkScheme.matches)
+    systemDarkScheme.addEventListener('change', (event) => {
+      const colorScheme = event.matches
+      setDarkMode(colorScheme)
+    })
+  }, [])
   return (
     <div
       className={
