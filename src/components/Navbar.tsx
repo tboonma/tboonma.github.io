@@ -29,7 +29,7 @@ const Navbar = () => {
         (showBackground ? ' dark:bg-gray-shark bg-white shadow-md ' : '')
       }
     >
-      <div className="title grid place-content-center w-1/6">
+      <div className="title grid place-content-start lg:place-content-center w-2/6 lg:w-1/6">
         <div className="text-xl text-center text-blue-light dark:text-blue-dark">
           Tawan B.
         </div>
