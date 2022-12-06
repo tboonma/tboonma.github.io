@@ -43,3 +43,9 @@
 .bg-translucent {
   background-color: rgba(209, 213, 219, 0.35);
 }
+
+.heading:before {
+  width: 16px;
+  height: 3px;
+  margin-right: 10px;
+}

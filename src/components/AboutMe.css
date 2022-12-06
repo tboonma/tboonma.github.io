@@ -8,12 +8,6 @@
   background: rgba(8, 81, 149, 0.48);
 }
 
-.heading:before {
-  width: 16px;
-  height: 3px;
-  margin-right: 10px;
-}
-
 #rectangle {
   grid-column: col 1 / span 8;
   grid-row: row 1 / span 11;
