@@ -3,7 +3,7 @@ import { HiBars3BottomRight } from 'react-icons/hi2'
 import { ChangeEvent, useEffect, useState } from 'react'
 import { MdOutlineDarkMode, MdOutlineWbSunny, MdClose } from 'react-icons/md'
 import { inject, observer } from 'mobx-react'
-import { mobXStore } from '../stores/MobXstore'
+import { mobXStore } from '../stores/MobXStore'
 import React from 'react'
 
 const Navbar = () => {
