@@ -119,7 +119,7 @@ const Experiences = () => {
                   onChange={() => setExperience(val)}
                   className="peer"
                 />
-                <div className="w-full py-3 px-4 rounded-lg text-clay cursor-pointer dark:text-white-seashell peer-checked:text-blue-light peer-checked:dark:text-blue-dark bg-white peer-checked:px-6 flex justify-between items-center duration-300 peer-checked:cursor-default">
+                <div className="w-full py-3 px-4 rounded-lg text-clay cursor-pointer peer-checked:text-blue-light peer-checked:dark:text-blue-dark bg-white dark:bg-opacity-90 peer-checked:px-6 flex justify-between items-center duration-300 peer-checked:cursor-default">
                   {experience?.companyName}
                   <MdNavigateNext
                     className={
