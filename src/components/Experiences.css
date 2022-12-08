@@ -11,3 +11,14 @@
     color: white;
   }
 }
+
+.workplace input {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.workplace label {
+  font-weight: 500;
+  font-size: 16px;
+}

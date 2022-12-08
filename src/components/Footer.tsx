@@ -9,8 +9,8 @@ import {
 
 const Footer = () => {
   return (
-    <div className="w-full p-4 dark:bg-gray-shark bg-white-seashell">
-      <div className="flex items-center space-x-7 justify-center w-full py-6">
+    <div className="w-full p-3 dark:bg-gray-shark bg-white-seashell">
+      <div className="flex items-center space-x-7 justify-center w-full py-2">
         <a href="https://www.linkedin.com/in/tboonma" target="_blank">
           <SlSocialLinkedin className="w-4 h-4 text-clay dark:text-white-seashell hover:opacity-50 stroke-[20] duration-300" />
         </a>

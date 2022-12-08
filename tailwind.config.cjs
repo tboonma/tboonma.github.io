@@ -11,6 +11,7 @@ module.exports = {
         'gray-shark': '#242526',
         'gray-woodsmoke': '#18191A',
         'white-seashell': '#f1f1f1',
+        'white-alabaster': '#FBFBFB',
         'blue-dark': '#2e89ff',
         'blue-light': '#1876f2'
       },

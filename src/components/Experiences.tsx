@@ -1,107 +1,51 @@
 import { CSSProperties, useEffect, useState } from 'react'
 import {
-  VerticalTimeline,
-  VerticalTimelineElement
-} from 'react-vertical-timeline-component'
-import 'react-vertical-timeline-component/style.min.css'
-import { MdWork } from 'react-icons/md'
+  MdWork,
+  MdNavigateNext,
+  MdOutlineKeyboardArrowDown
+} from 'react-icons/md'
+import { experiences, IExperienceInformation } from '../stores/experienceData'
 import './Experiences.css'
 
-export interface WorkExperience {
-  positionName: string
-  employmentType: string
-  companyName: string
-  companyPic?: any
-  location: string
-  description?: string
-  startDate: Date
-  currentlyWorking?: boolean
-  lastDate?: Date
-  skills: string[]
-}
-
-export interface CompanyIconComponent {
-  icon: JSX.Element
-  iconStyle: CSSProperties
-}
-
 const Experiences = () => {
-  const [experiences, setExperiences] = useState<WorkExperience[]>([])
+  const [experience, setExperience] = useState<IExperienceInformation>()
+  const [experienceDuration, setExperienceDuration] = useState<string>('')
+  const [selectedOption, setSelectedOption] = useState<string>('a')
 
-  const GetCompanyIconComponent = (imgSrc?: string): CompanyIconComponent => {
-    const component: CompanyIconComponent = {
-      icon: <MdWork />,
-      iconStyle: {
-        background: '#fff',
-        color: '#085195',
-        borderColor: '#085195',
-        boxShadow:
-          '0 0 0 4px #085195, inset 0 2px 0 rgb(0 0 0 / 8%), 0 3px 0 4px rgb(0 0 0 / 5%)'
-      }
-    }
-    if (imgSrc === undefined || imgSrc === '') return component
-    component.icon = (
-      <img src={imgSrc} style={{ borderRadius: '50%', objectFit: 'cover' }} />
-    )
-    component.iconStyle.display = 'flex'
-    component.iconStyle.alignItems = 'center'
-    return component
+  const onChangeValue = (event: any) => {
+    console.log(event.target.value)
+    setSelectedOption(event.target.value)
   }
 
-  const GetExperiencePeriod = (exp: WorkExperience): string => {
-    let txt = `${exp.startDate.toLocaleString('default', {
-      month: 'long'
-    })} ${exp.startDate.getFullYear()}`
-    if (exp.currentlyWorking || (exp.lastDate && exp.lastDate > new Date()))
-      txt += ' - Present'
-    else if (exp.lastDate) {
-      txt += ` - ${exp.lastDate.toLocaleString('default', {
-        month: 'long'
-      })} ${exp.lastDate.getFullYear()}`
-    }
-    return txt
-  }
-
-  const getWorkExperience = () => {
-    const workExperince1: WorkExperience = {
-      positionName: 'Full stack software engineer',
-      employmentType: 'Internship',
-      companyName: 'Agoda',
-      location: 'Bangkok, Thailand',
-      startDate: new Date(2022, 6),
-      lastDate: new Date(2022, 7),
-      skills: [
-        'TypeScript',
-        'Scrum',
-        'React',
-        '.NET Core',
-        'Profiling',
-        'Kubernetes'
-      ],
-      currentlyWorking: false,
-      companyPic:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN-WafmzXr_JfKJ4gEUgxa49Bc7Xn72RoaZkD6_5je6QT7ssgxxWhIbnW7ylmLPZ4x89g&usqp=CAU'
-    }
-    const workExperince2: WorkExperience = {
-      positionName: 'Full stack software engineer',
-      employmentType: 'Part-time Internship',
-      companyName: 'Agoda',
-      location: 'Bangkok, Thailand',
-      startDate: new Date(2022, 8),
-      lastDate: new Date(2022, 12),
-      skills: ['TypeScript', 'Scrum', 'React', '.NET Core'],
-      companyPic:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN-WafmzXr_JfKJ4gEUgxa49Bc7Xn72RoaZkD6_5je6QT7ssgxxWhIbnW7ylmLPZ4x89g&usqp=CAU'
-    }
-    setExperiences([workExperince1, workExperince2])
+  const getExperienceDuration = (exp: IExperienceInformation): void => {
+    let result: string = exp.startDate.toLocaleString('default', {
+      month: 'short',
+      year: 'numeric'
+    })
+    result += ' - '
+    if (exp.endDate !== undefined)
+      result += exp.endDate?.toLocaleString('default', {
+        month: 'short',
+        year: 'numeric'
+      })
+    else result += 'Present'
+    setExperienceDuration(result)
   }
 
   useEffect(() => {
-    getWorkExperience()
+    if (experience === undefined) return
+    getExperienceDuration(experience)
+  }, [experience])
+
+  useEffect(() => {
+    setExperience(experiences[0])
   }, [])
 
   return (
-    <div id="experiences" className="px-10 pt-24">
+    <div
+      id="experiences"
+      className="px-10 py-24 bg-white-alabaster dark:bg-transparent"
+    >
       <div className="space-y-3 md:col-span-3 text-center md:text-left">
         <div className="before:bg-gray-alto heading text-gray-nevada text-sm md:text-md tracking-extrawide flex items-center justify-center md:justify-start">
           <p>CAREER PATH</p>
@@ -110,6 +54,111 @@ const Experiences = () => {
           <h1 className="font-bold text-clay dark:text-white-seashell text-3xl md:text-4xl">
             Work Experiences
           </h1>
+        </div>
+      </div>
+      {/* Desktop */}
+      <div className="hidden lg:flex min-h-[100px]">
+        <div className="w-2/5 pt-12 px-2 space-y-3">
+          {experiences.map((val) => (
+            <div className="workplace" key={val.id}>
+              <label>
+                <input
+                  type="radio"
+                  value={val.id}
+                  checked={experience?.id === val.id}
+                  onChange={() => setExperience(val)}
+                  className="peer"
+                />
+                <div className="w-5/6 py-3 px-4 rounded-lg text-clay cursor-pointer hover:bg-gray-500 hover:bg-opacity-25 dark:text-white-seashell peer-checked:text-blue-light peer-checked:dark:text-blue-dark peer-checked:bg-white peer-checked:px-6 flex justify-between items-center duration-300 peer-checked:cursor-default">
+                  {experience?.companyName}
+                  <MdNavigateNext
+                    className={
+                      'w-5 h-5 ' + (experience?.id === val.id ? '' : 'hidden')
+                    }
+                  />
+                </div>
+              </label>
+            </div>
+          ))}
+        </div>
+        <div className="w-full h-full flex justify-center">
+          <div className="w-4/5 space-y-3">
+            <div className="text-xl text-clay dark:text-white-seashell font-semibold">
+              {experience?.jobTitle} - {experience?.companyName}
+            </div>
+            <div className="text-base text-gray-nevada dark:text-white-seashell">
+              {experience?.location}
+            </div>
+            <div className="text-gray-nevada dark:text-white-seashell font-semibold">
+              {experienceDuration} · {experience?.employmentType}
+            </div>
+            <div className="flex space-x-3 mb-10">
+              {experience?.tag.map((val) => (
+                <div className="border-[1.5px] border-white-seashell rounded text-gray-nevada dark:text-white-alabaster py-1 px-2 text-sm">
+                  {val}
+                </div>
+              ))}
+            </div>
+            <div className="h-[1.5px] bg-white-seashell dark:h-[0.5px] dark:bg-gray-nevada"></div>
+            <div className="text-gray-nevada dark:text-white-seashell">
+              {experience?.description}
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Mobile */}
+      <div className="lg:hidden">
+        <div className="w-full pt-12 px-2 space-y-3">
+          {experiences.map((val) => (
+            <div className="workplace" key={val.id}>
+              <label>
+                <input
+                  type="radio"
+                  value={val.id}
+                  checked={experience?.id === val.id}
+                  onChange={() => setExperience(val)}
+                  className="peer"
+                />
+                <div className="w-full py-3 px-4 rounded-lg text-clay cursor-pointer dark:text-white-seashell peer-checked:text-blue-light peer-checked:dark:text-blue-dark bg-white peer-checked:px-6 flex justify-between items-center duration-300 peer-checked:cursor-default">
+                  {experience?.companyName}
+                  <MdNavigateNext
+                    className={
+                      'w-5 h-5' + (experience?.id === val.id ? ' hidden' : '')
+                    }
+                  />
+                  <MdOutlineKeyboardArrowDown
+                    className={
+                      'w-5 h-5' + (experience?.id === val.id ? '' : ' hidden')
+                    }
+                  />
+                </div>
+                <div className="w-full h-full hidden peer-checked:flex justify-center pt-4">
+                  <div className="w-4/5 space-y-3">
+                    <div className="text-xl text-clay dark:text-white-seashell font-semibold">
+                      {experience?.jobTitle} - {experience?.companyName}
+                    </div>
+                    <div className="text-base text-gray-nevada dark:text-white-seashell">
+                      {experience?.location}
+                    </div>
+                    <div className="text-gray-nevada dark:text-white-seashell font-semibold">
+                      {experienceDuration} · {experience?.employmentType}
+                    </div>
+                    <div className="flex flex-wrap mb-10">
+                      {experience?.tag.map((val) => (
+                        <div className="mt-1 mr-3 border-[1.5px] border-white-seashell rounded text-gray-nevada dark:text-white-alabaster py-1 px-2 text-sm">
+                          {val}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="h-[1.5px] bg-white-seashell dark:h-[0.5px] dark:bg-gray-nevada"></div>
+                    <div className="text-gray-nevada dark:text-white-seashell">
+                      {experience?.description}
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
+          ))}
         </div>
       </div>
     </div>
