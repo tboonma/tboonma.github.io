@@ -4,7 +4,7 @@ import {
   MdNavigateNext,
   MdOutlineKeyboardArrowDown
 } from 'react-icons/md'
-import { experiences, IExperienceInformation } from '../stores/experienceData'
+import { experiences, IExperienceInformation } from '../stores/ExperienceData'
 import './Experiences.css'
 
 const Experiences = () => {
@@ -93,8 +93,11 @@ const Experiences = () => {
               {experienceDuration} · {experience?.employmentType}
             </div>
             <div className="flex space-x-3 mb-10">
-              {experience?.tag.map((val) => (
-                <div className="border-[1.5px] border-white-seashell rounded text-gray-nevada dark:text-white-alabaster py-1 px-2 text-sm">
+              {experience?.tag.map((val, index) => (
+                <div
+                  key={index}
+                  className="border-[1.5px] border-white-seashell rounded text-gray-nevada dark:text-white-alabaster py-1 px-2 text-sm"
+                >
                   {val}
                 </div>
               ))}
@@ -144,8 +147,11 @@ const Experiences = () => {
                       {experienceDuration} · {experience?.employmentType}
                     </div>
                     <div className="flex flex-wrap mb-10">
-                      {experience?.tag.map((val) => (
-                        <div className="mt-1 mr-3 border-[1.5px] border-white-seashell rounded text-gray-nevada dark:text-white-alabaster py-1 px-2 text-sm">
+                      {experience?.tag.map((val, index) => (
+                        <div
+                          key={index}
+                          className="mt-1 mr-3 border-[1.5px] border-white-seashell rounded text-gray-nevada dark:text-white-alabaster py-1 px-2 text-sm"
+                        >
                           {val}
                         </div>
                       ))}
