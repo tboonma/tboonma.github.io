@@ -49,10 +49,10 @@ const Navbar = () => {
     >
       <div
         className={
-          'title lg:w-1/6' +
+          'title' +
           (showNavbarInMobile
             ? ' w-full flex justify-between items-center'
-            : ' w-2/6 grid place-content-start lg:place-content-center')
+            : ' grid place-content-center')
         }
       >
         <div className="text-xl text-center text-blue-light dark:text-blue-dark">
@@ -67,10 +67,7 @@ const Navbar = () => {
       </div>
       <div
         className={
-          'text-center lg:flex lg:items-center lg:justify-between px-10' +
-          (showNavbarInMobile
-            ? ' w-full mt-8 space-y-8 text-2xl'
-            : ' hidden w-3/6')
+          'text-center hidden lg:flex lg:items-center lg:justify-between px-10 space-x-12'
         }
       >
         <h2>
@@ -112,9 +109,9 @@ const Navbar = () => {
           </a>
         </h2>
       </div>
-      <div className="hidden lg:flex lg:items-center lg:justify-center w-1/6">
+      <div className="flex items-center justify-center space-x-2">
         <div
-          className="text-clay hover:bg-gray-400 rounded-full cursor-pointer duration-300 p-2 mr-2"
+          className="text-clay hover:bg-gray-400 rounded-full cursor-pointer duration-300 p-2"
           onClick={changeThemeHandler}
         >
           {store.isDarkMode ? (
@@ -129,15 +126,6 @@ const Navbar = () => {
         >
           Resume
         </a>
-      </div>
-      <div
-        className={
-          'place-content-center lg:hidden' +
-          (showNavbarInMobile ? ' hidden' : ' grid')
-        }
-        onClick={openNavbar}
-      >
-        <HiBars3BottomRight className="w-6 h-6 cursor-pointer text-clay dark:text-white-seashell" />
       </div>
     </div>
   )
