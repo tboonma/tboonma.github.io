@@ -40,17 +40,17 @@ const Projects = () => {
                   <h2 className="font-semibold text-clay text-left">
                     ThaiRepose
                   </h2>
-                  <p className="text-sm text-left">
+                  <p className="text-sm text-left text-gray-cod">
                     Project about traveling planner
                   </p>
                 </div>
                 <a
                   style={{ color: 'inherit' }}
-                  className="hover:opacity-50 duration-300 p-2 border-white-seashell text-gray-nevada border-[1px] rounded-md"
+                  className="hover:opacity-50 duration-300 p-2 border-white-seashell text-clay border-[1px] rounded-md"
                   href="https://github.com/tboonma/thairepose"
                   target="_blank"
                 >
-                  <SiGithub className="w-4 h-4" />
+                  <SiGithub className="w-4 h-4 text-clay" />
                 </a>
               </div>
               <div className="flex flex-wrap pt-3 gap-x-2 gap-y-1">
