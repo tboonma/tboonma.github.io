@@ -10,6 +10,7 @@ module.exports = {
         'gray-nevada': '#656D72',
         'gray-shark': '#242526',
         'gray-woodsmoke': '#18191A',
+        'gray-wildsand': '#F5F5F5',
         'white-seashell': '#f1f1f1',
         'white-alabaster': '#FBFBFB',
         'blue-dark': '#2e89ff',

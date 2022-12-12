@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useEffect } from 'react'
 import './Projects.css'
-import { SiPython } from 'react-icons/si'
+import ThaiRepose from '../assets/img/projects/thairepose.png'
 
 const Projects = () => {
   const GetAllRepo = async () => {
@@ -25,6 +25,28 @@ const Projects = () => {
           <h1 className="font-bold text-clay dark:text-white-seashell text-3xl md:text-4xl">
             Featured Portfolios
           </h1>
+        </div>
+        <div className="w-full h-full grid md:grid-cols-3 gap-10 place-content-center pt-8">
+          <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
+            <img
+              src={ThaiRepose}
+              alt=""
+              className="object-cover rounded-t-lg"
+            />
+            <div className="p-3">
+              <h2 className="font-semibold text-clay text-left md:text-center">
+                ThaiRepose
+              </h2>
+              <p className="text-sm text-left md:text-center">
+                Project about traveling planner
+              </p>
+              <div className="flex flex-wrap pt-3 gap-x-2 gap-y-1">
+                <div className="text-gray-nevada border-white-seashell border-[0.5px] rounded-lg text-xs py-1 px-2">
+                  Python
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
