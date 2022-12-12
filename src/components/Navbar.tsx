@@ -4,6 +4,7 @@ import { ChangeEvent, useEffect, useState } from 'react'
 import { MdOutlineDarkMode, MdOutlineWbSunny, MdClose } from 'react-icons/md'
 import { inject, observer } from 'mobx-react'
 import { mobXStore } from '../stores/MobXStore'
+import Resume from '../assets/resume.pdf'
 import React from 'react'
 
 const Navbar = () => {
@@ -122,9 +123,12 @@ const Navbar = () => {
             <MdOutlineWbSunny className="text-clay text-2xl" />
           )}
         </div>
-        <button className="text-clay border-white-seashell rounded-lg dark:text-white border h-full py-2 px-5 bg-transparent">
+        <a
+          className="text-clay border-white-seashell rounded-lg dark:text-white border h-full py-2 px-5 bg-transparent cursor-pointer"
+          href={Resume}
+        >
           Resume
-        </button>
+        </a>
       </div>
       <div
         className={
