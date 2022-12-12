@@ -19,4 +19,4 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Deploy Production
-        run: vercel --prod --token=${{ env.VERCEL_ACCESS_TOKEN }}
+        run: vercel --prod --token=${{ secrets.VERCEL_ACCESS_TOKEN }}
