@@ -12,8 +12,13 @@ concurrency:
 jobs:
   publish:
     name: Deploy Production
-    environment: Production
+    environment: 
+      name: Production
+      url: https://tawanb.dev
     runs-on: ubuntu-latest
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
     steps:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
