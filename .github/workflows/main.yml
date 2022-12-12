@@ -9,14 +9,10 @@ concurrency:
   group: ${{ github.ref_name }}
   cancel-in-progress: true
 
-env:
-  VERCEL_ACCESS_TOKEN: ${{ secrets.VERCEL_ACCESS_TOKEN }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-
 jobs:
   publish:
-    name: Deploy to Vercel
+    name: Deploy Production
+    environment: Production
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
