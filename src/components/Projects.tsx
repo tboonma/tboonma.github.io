@@ -34,10 +34,10 @@ const Projects = () => {
               className="object-cover rounded-t-lg"
             />
             <div className="p-3">
-              <h2 className="font-semibold text-clay text-left md:text-center">
+              <h2 className="font-semibold text-clay text-left">
                 ThaiRepose
               </h2>
-              <p className="text-sm text-left md:text-center">
+              <p className="text-sm text-left">
                 Project about traveling planner
               </p>
               <div className="flex flex-wrap pt-3 gap-x-2 gap-y-1">
