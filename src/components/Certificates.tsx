@@ -17,6 +17,7 @@ const Certificates = () => {
         <div className="w-full h-full grid md:grid-cols-3 gap-10 place-content-center pt-8">
           <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
             <ModalImage
+              className="rounded-lg"
               small={FacebookHackerCup}
               medium={FacebookHackerCup}
               large={FacebookHackerCup}
@@ -40,6 +41,7 @@ const Certificates = () => {
           </div>
           <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
             <ModalImage
+              className="rounded-lg"
               small={AgodaInternPitch}
               medium={AgodaInternPitch}
               large={AgodaInternPitch}
