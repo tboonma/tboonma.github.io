@@ -10,6 +10,11 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@avidian/react-modal-image@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@avidian/react-modal-image/-/react-modal-image-2.5.2.tgz#d60bffd5081c0f0c12cab96cc152664933ded669"
+  integrity sha512-sUBeaF5aE86Day3zRahFM9aXKr7MMMGwoACmFjHNvXP1aykLnpfMGV3qY+6woVjm0n2FOS8YCjkM8t3YCrK5KA==
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.18.6":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.18.6.tgz#3b25d38c89600baa2dcc219edfa88a74eb2c427a"
@@ -1502,11 +1507,6 @@ react-is@^18.0.0, react-is@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
-
-react-modal-image@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/react-modal-image/-/react-modal-image-2.6.0.tgz#24b5963b5a50c029a445d125efb49870738700d5"
-  integrity sha512-NNc1xPKzFAn0VsNMdJ8NXt6c54aL/z0fcoYmw9qn4SBUONdGl+8LOQ0sTfo0wtdzcjLiby/ncloHcAL+UI+wIA==
 
 react-redux@^8.0.5:
   version "8.0.5"
