@@ -19,8 +19,7 @@ export const experience1: IExperienceInformation = {
   startDate: new Date(2022, 5),
   endDate: new Date(2022, 6),
   tag: ['C#', '.NET Core', 'React', 'Typescript', 'Profiling'],
-  description: `
-Worked on internal tools related to .NET Profiling
+  description: `Worked on internal tools related to .NET Profiling
 - Created an internal diagnostic package for other services.
 - Created a new app from scratch to trigger other services to capture processes, so other engineers can visualize the captured processes and identify the cause of problems.
 `
@@ -35,8 +34,7 @@ export const experience2: IExperienceInformation = {
   startDate: new Date(2022, 7),
   endDate: new Date(2022, 11),
   tag: ['C#', '.NET Core', 'React', 'Typescript'],
-  description: `
-Worked on product "Agoda Homes"
+  description: `Worked on product "Agoda Homes"
 --------------
 ✦ Weekly/Monthly Promotions
 - Extends the weekly/monthly promotion input to be in the property creation page.
