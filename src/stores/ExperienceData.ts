@@ -16,8 +16,8 @@ export const experience1: IExperienceInformation = {
   employmentType: 'Internship',
   companyName: 'Agoda',
   location: 'Bangkok, Thailand',
-  startDate: new Date(2022, 6),
-  endDate: new Date(2022, 7),
+  startDate: new Date(2022, 5),
+  endDate: new Date(2022, 6),
   tag: ['C#', '.NET Core', 'React', 'Typescript', 'Profiling']
 }
 
@@ -27,8 +27,8 @@ export const experience2: IExperienceInformation = {
   employmentType: 'Part-time internship',
   companyName: 'Agoda',
   location: 'Bangkok, Thailand',
-  startDate: new Date(2022, 8),
-  endDate: new Date(2022, 12),
+  startDate: new Date(2022, 7),
+  endDate: new Date(2022, 11),
   tag: ['C#', '.NET Core', 'React', 'Typescript']
 }
 
