@@ -12,6 +12,7 @@ concurrency:
 
 jobs:
   tests:
+    name: Tests
     uses: ./.github/workflows/tests.yml
   deploy:
     name: Deploy Beta

@@ -11,6 +11,7 @@ concurrency:
 
 jobs:
   tests:
+    name: Tests
     uses: ./.github/workflows/tests.yml
   publish:
     name: Deploy Production
