@@ -1,21 +1,11 @@
-import { CSSProperties, useEffect, useState } from 'react'
-import {
-  MdWork,
-  MdNavigateNext,
-  MdOutlineKeyboardArrowDown
-} from 'react-icons/md'
-import { experiences, IExperienceInformation } from '../stores/ExperienceData'
+import { useEffect, useState } from 'react'
+import { MdNavigateNext, MdOutlineKeyboardArrowDown } from 'react-icons/md'
+import { experiences, IExperienceInformation } from '@src/stores/ExperienceData'
 import './Experiences.css'
 
 const Experiences = () => {
   const [experience, setExperience] = useState<IExperienceInformation>()
   const [experienceDuration, setExperienceDuration] = useState<string>('')
-  const [selectedOption, setSelectedOption] = useState<string>('a')
-
-  const onChangeValue = (event: any) => {
-    console.log(event.target.value)
-    setSelectedOption(event.target.value)
-  }
 
   const getExperienceDuration = (exp: IExperienceInformation): void => {
     let result: string = exp.startDate.toLocaleString('default', {

@@ -6,7 +6,7 @@ export interface IMobXStore {
 }
 
 class MobXStore implements IMobXStore {
-  @observable isDarkMode: boolean = false
+  @observable isDarkMode = false
 
   constructor() {
     makeObservable(this)

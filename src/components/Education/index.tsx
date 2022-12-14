@@ -1,4 +1,3 @@
-import './Education.css'
 import Timeline from '@mui/lab/Timeline'
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem'
 import TimelineSeparator from '@mui/lab/TimelineSeparator'
@@ -41,7 +40,7 @@ const Education = () => {
                     Kasetsart University
                   </h2>
                   <p className="text-base text-gray-nevada dark:text-white">
-                    Bachelor's degree - Software and Knowledge Engineering
+                    Bachelor&apos;s degree - Software and Knowledge Engineering
                   </p>
                   <p className="py-5 text-base text-clay dark:text-white-seashell">
                     2020 - Present

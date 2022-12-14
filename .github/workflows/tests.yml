@@ -1,0 +1,22 @@
+name: Tests
+
+on:
+  workflow_call:
+
+jobs:
+  lint:
+    name: Lint test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chackout
+        uses: actions/checkout@v3
+      - name: Set up NodeJS environment
+        uses: actions/setup-node@v2
+        with:
+          node-version-file: '.nvmrc'
+      - name: Install yarn
+        run: npm install --global yarn
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Perform Lint Test
+        run: yarn lint
