@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { MdNavigateNext, MdOutlineKeyboardArrowDown } from 'react-icons/md'
-import { experiences, IExperienceInformation } from '../stores/ExperienceData'
+import { experiences, IExperienceInformation } from '../../stores/ExperienceData'
 import './Experiences.css'
 
 const Experiences = () => {

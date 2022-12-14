@@ -1,6 +1,6 @@
 import './AboutMe.css'
 import MyPic from '../assets/img/profile-pic.jpg'
-import SocialAccounts from './SocialAccounts'
+import SocialAccounts from '../SocialAccounts'
 
 const AboutMe = () => {
   return (

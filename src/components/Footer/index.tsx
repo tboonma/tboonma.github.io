@@ -1,4 +1,4 @@
-import SocialAccounts from './SocialAccounts'
+import SocialAccounts from '../SocialAccounts'
 
 const Footer = () => {
   return (
