@@ -12,10 +12,6 @@ const Projects = () => {
     console.log(response.data)
   }
 
-  useEffect(() => {
-    GetAllRepo()
-  }, [])
-
   return (
     <div id="projects" className="Projects py-24 px-10">
       <div className="space-y-3 md:col-span-3 text-center md:text-left">
