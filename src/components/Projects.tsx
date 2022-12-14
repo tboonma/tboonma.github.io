@@ -1,16 +1,19 @@
 import axios from 'axios'
-import { useEffect } from 'react'
 import './Projects.css'
 import ThaiRepose from '../assets/img/projects/thairepose.png'
 import { SiGithub } from 'react-icons/si'
+import { useEffect } from 'react'
 
 const Projects = () => {
   const GetAllRepo = async () => {
-    const response = await axios.get(
+    await axios.get(
       'https://api.github.com/users/tboonma/repos?&per_page=100&sort=pushed'
     )
-    console.log(response.data)
   }
+
+  useEffect(() => {
+    GetAllRepo()
+  }, [])
 
   return (
     <div id="projects" className="Projects py-24 px-10">
@@ -45,6 +48,7 @@ const Projects = () => {
                   className="hover:opacity-50 duration-300 p-2 border-white-seashell text-clay border-[1px] rounded-md"
                   href="https://github.com/tboonma/thairepose"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <SiGithub className="w-4 h-4 text-clay" />
                 </a>

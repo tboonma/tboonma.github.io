@@ -1,12 +1,6 @@
 import './AboutMe.css'
 import MyPic from '../assets/img/profile-pic.jpg'
-import {
-  SlSocialLinkedin,
-  SlSocialFacebook,
-  SlSocialTwitter
-} from 'react-icons/sl'
-import { FiGithub } from 'react-icons/fi'
-import { GrInstagram } from 'react-icons/gr'
+import SocialAccounts from './SocialAccounts'
 
 const AboutMe = () => {
   return (
@@ -29,26 +23,13 @@ const AboutMe = () => {
             Full stack Software Engineer
           </span>{' '}
           who also a Junior in Software and Knowledge Engineering at Kasetsart
-          University. Right now I'm extremely busy with final exam and projects,
-          developing this web soon.
+          University. Right now I&apos;m extremely busy with final exam and
+          projects, developing this web soon.
         </p>
-        <div className="flex items-baseline space-x-7 pt-5 justify-center md:justify-start">
-          <a href="https://www.linkedin.com/in/tboonma" target="_blank">
-            <SlSocialLinkedin className="w-6 h-6 text-clay dark:text-white-seashell hover:opacity-50 stroke-[20] duration-300" />
-          </a>
-          <a href="https://github.com/tboonma" target="_blank">
-            <FiGithub className="w-6 h-5 text-clay dark:text-white-seashell hover:opacity-50 stroke-[2.6] duration-300" />
-          </a>
-          <a href="https://www.instagram.com/tboonma_" target="_blank">
-            <GrInstagram className="w-6 h-6 text-clay dark:text-white-seashell hover:opacity-50 stroke-[0.03] duration-300" />
-          </a>
-          <a href="https://www.facebook.com/tboonmaeiei" target="_blank">
-            <SlSocialFacebook className="w-6 h-6 text-clay dark:text-white-seashell hover:opacity-50 stroke-[18] duration-300" />
-          </a>
-          <a href="https://twitter.com/Tboonmaeiei" target="_blank">
-            <SlSocialTwitter className="w-6 h-6 text-clay dark:text-white-seashell hover:opacity-50 stroke-[18] duration-300" />
-          </a>
-        </div>
+        <SocialAccounts
+          cls="flex items-baseline space-x-7 pt-5 justify-center md:justify-start"
+          iconSize={6}
+        />
       </div>
       <div className="md:col-span-2 flex justify-center mt-10">
         <div className="Profile max-w-xs">

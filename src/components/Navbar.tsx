@@ -1,7 +1,6 @@
 import './Navbar.css'
-import { HiBars3BottomRight } from 'react-icons/hi2'
-import { ChangeEvent, useEffect, useState } from 'react'
-import { MdOutlineDarkMode, MdOutlineWbSunny, MdClose } from 'react-icons/md'
+import { useEffect, useState } from 'react'
+import { MdOutlineDarkMode, MdOutlineWbSunny } from 'react-icons/md'
 import { inject, observer } from 'mobx-react'
 import { mobXStore } from '../stores/MobXStore'
 import Resume from '../assets/resume.pdf'
@@ -10,8 +9,6 @@ import React from 'react'
 const Navbar = () => {
   const store = mobXStore
   const [showBackground, setBackground] = useState<boolean>(false)
-  const [showNavbarInMobile, setNavbarInMobile] = useState<boolean>(false)
-  const box = React.createRef<any>()
 
   const changeThemeHandler = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault()
@@ -22,17 +19,6 @@ const Navbar = () => {
     setBackground(window.scrollY >= 80)
   }
 
-  const openNavbar = (event: React.MouseEvent<HTMLElement>) => {
-    event.preventDefault()
-    setNavbarInMobile(true)
-  }
-
-  const closeNavbar = (event?: React.MouseEvent<HTMLElement>) => {
-    event?.preventDefault()
-    console.log(1)
-    setNavbarInMobile(false)
-  }
-
   useEffect(() => {
     window.addEventListener('scroll', changeBackgroundColor)
   })
@@ -40,41 +26,20 @@ const Navbar = () => {
   return (
     <div
       className={
-        `Navbar px-10 py-6 w-full fixed duration-300` +
-        (showBackground || showNavbarInMobile
-          ? ' dark:bg-gray-shark bg-white shadow-md'
-          : '') +
-        (showNavbarInMobile ? ' h-full' : ' flex justify-between')
+        `Navbar px-10 py-6 w-full fixed duration-300 flex justify-between` +
+        (showBackground ? ' dark:bg-gray-shark bg-white shadow-md' : '')
       }
     >
-      <div
-        className={
-          'title' +
-          (showNavbarInMobile
-            ? ' w-full flex justify-between items-center'
-            : ' grid place-content-center')
-        }
-      >
+      <div className="title grid place-content-center">
         <div className="text-xl text-center text-blue-light dark:text-blue-dark">
           Tawan B.
         </div>
-        <div
-          className={'cursor-pointer' + (showNavbarInMobile ? '' : ' hidden')}
-          onClick={closeNavbar}
-        >
-          <MdClose className="w-6 h-6 text-white-seashell" />
-        </div>
       </div>
-      <div
-        className={
-          'text-center hidden lg:flex lg:items-center lg:justify-between px-10 space-x-12'
-        }
-      >
+      <div className="text-center hidden lg:flex lg:items-center lg:justify-between px-10 space-x-12">
         <h2>
           <a
             href="#about-me"
             className="text-clay dark:text-white-seashell hover:text-slate-500 font-medium"
-            ref={box}
           >
             About me
           </a>
@@ -103,7 +68,7 @@ const Navbar = () => {
             Contact
           </a>
         </h2>
-        <h2 className="">
+        <h2 className="hidden">
           <a href="" className="text-clay dark:text-white hover:text-slate-500">
             ···
           </a>
