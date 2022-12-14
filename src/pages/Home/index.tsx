@@ -1,9 +1,9 @@
-import AboutMe from '../../components/AboutMe'
-import Certificates from '../../components/Certificates'
-import Contact from '../../components/Contact'
-import Education from '../../components/Education'
-import Experiences from '../../components/Experiences'
-import Projects from '../../components/Projects'
+import AboutMe from '@src/components/AboutMe'
+import Certificates from '@src/components/Certificates'
+import Contact from '@src/components/Contact'
+import Education from '@src/components/Education'
+import Experiences from '@src/components/Experiences'
+import Projects from '@src/components/Projects'
 
 const Home = () => {
   return (

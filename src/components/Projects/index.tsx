@@ -1,6 +1,6 @@
 import axios from 'axios'
 import './Projects.css'
-import ThaiRepose from '../assets/img/projects/thairepose.png'
+import ThaiRepose from '@src/assets/img/projects/thairepose.png'
 import { SiGithub } from 'react-icons/si'
 import { useEffect } from 'react'
 

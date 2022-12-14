@@ -1,10 +1,9 @@
 import './Navbar.css'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdOutlineDarkMode, MdOutlineWbSunny } from 'react-icons/md'
 import { inject, observer } from 'mobx-react'
-import { mobXStore } from '../../stores/MobXStore'
-import Resume from '../assets/resume.pdf'
-import React from 'react'
+import { mobXStore } from '@src/stores/MobXStore'
+import Resume from '@src/assets/resume.pdf'
 
 const Navbar = () => {
   const store = mobXStore

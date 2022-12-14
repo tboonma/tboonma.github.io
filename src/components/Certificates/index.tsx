@@ -1,5 +1,5 @@
-import FacebookHackerCup from '../assets/img/certificates/facebook-hacker-cup.png'
-import AgodaInternPitch from '../assets/img/certificates/Agoda-InternPitch.png'
+import FacebookHackerCup from '@src/assets/img/certificates/facebook-hacker-cup.png'
+import AgodaInternPitch from '@src/assets/img/certificates/Agoda-InternPitch.png'
 import ModalImage from '@avidian/react-modal-image'
 
 const Certificates = () => {
