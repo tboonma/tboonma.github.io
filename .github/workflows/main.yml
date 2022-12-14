@@ -24,6 +24,10 @@ jobs:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
     steps:
       - uses: actions/checkout@v2
+      - name: Set up NodeJS environment
+        uses: actions/setup-node@v2
+        with:
+          node-version-file: '.nvmrc'
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Deploy Production
