@@ -10,8 +10,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  tests:
+    uses: ./.github/workflows/tests.yml
   publish:
     name: Deploy Production
+    needs: [tests]
     environment: 
       name: Production
       url: https://tawanb.dev
