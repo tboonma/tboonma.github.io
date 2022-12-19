@@ -76,7 +76,7 @@ const Navbar = () => {
           )}
         </div>
         <a
-          className="text-clay border-white-seashell rounded-lg dark:text-white border h-full py-2 px-5 bg-transparent cursor-pointer"
+          className="text-clay border-white-seashell rounded-lg dark:text-white border h-full py-2 px-5 bg-transparent cursor-pointer hover:bg-clay hover:dark:bg-white-seashell hover:text-white-seashell hover:dark:text-clay duration-300"
           href={Resume}
         >
           Resume
