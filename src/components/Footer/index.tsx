@@ -2,7 +2,7 @@ import SocialAccounts from '@src/components/SocialAccounts'
 
 const Footer = () => {
   return (
-    <div className="w-full p-3 dark:bg-gray-shark bg-white-seashell">
+    <footer className="w-full p-3 dark:bg-gray-shark bg-white-seashell">
       <SocialAccounts
         cls="flex items-center space-x-7 justify-center w-full py-2"
         iconSize={4}
@@ -16,7 +16,7 @@ const Footer = () => {
           Portfolio Design
         </a>
       </div>
-    </div>
+    </footer>
   )
 }
 

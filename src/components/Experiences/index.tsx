@@ -93,9 +93,9 @@ const Experiences = () => {
               ))}
             </div>
             <div className="h-[1.5px] bg-white-seashell dark:h-[0.5px] dark:bg-gray-nevada"></div>
-            <div className="text-gray-nevada dark:text-white-seashell whitespace-pre-line">
+            <article className="text-gray-nevada dark:text-white-seashell whitespace-pre-line">
               {experience?.description}
-            </div>
+            </article>
           </div>
         </div>
       </div>
@@ -147,9 +147,9 @@ const Experiences = () => {
                       ))}
                     </div>
                     <div className="h-[1.5px] bg-white-seashell dark:h-[0.5px] dark:bg-gray-nevada"></div>
-                    <div className="text-gray-nevada dark:text-white-seashell whitespace-pre-line">
+                    <article className="text-gray-nevada dark:text-white-seashell whitespace-pre-line">
                       {experience?.description}
-                    </div>
+                    </article>
                   </div>
                 </div>
               </label>
