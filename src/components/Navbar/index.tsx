@@ -23,56 +23,47 @@ const Navbar = () => {
   })
 
   return (
-    <div
+    <header
       className={
         `Navbar px-10 py-6 w-full fixed duration-300 flex justify-between` +
         (showBackground ? ' dark:bg-gray-shark bg-white shadow-md' : '')
       }
     >
-      <div className="title grid place-content-center">
-        <div className="text-xl text-center text-blue-light dark:text-blue-dark">
-          Tawan B.
-        </div>
-      </div>
-      <div className="text-center hidden lg:flex lg:items-center lg:justify-between px-10 space-x-12">
-        <h2>
-          <a
-            href="#about-me"
-            className="text-clay dark:text-white-seashell hover:text-slate-500 font-medium"
-          >
-            About me
-          </a>
-        </h2>
-        <h2>
-          <a
-            href="#experiences"
-            className="text-clay dark:text-white hover:text-slate-500"
-          >
-            Experiences
-          </a>
-        </h2>
-        <h2>
-          <a
-            href="#projects"
-            className="text-clay dark:text-white hover:text-slate-500"
-          >
-            Projects
-          </a>
-        </h2>
-        <h2>
-          <a
-            href="#contact"
-            className="text-clay dark:text-white hover:text-slate-500"
-          >
-            Contact
-          </a>
-        </h2>
-        <h2 className="hidden">
-          <a href="" className="text-clay dark:text-white hover:text-slate-500">
-            ···
-          </a>
-        </h2>
-      </div>
+      <h1 className="title grid place-content-center text-xl text-center text-blue-light dark:text-blue-dark">
+        Tawan B.
+      </h1>
+      <nav className="text-center hidden lg:flex lg:items-center lg:justify-between px-10 space-x-12">
+        <a
+          href="#about-me"
+          className="text-clay dark:text-white-seashell hover:text-slate-500 font-medium"
+        >
+          About me
+        </a>
+        <a
+          href="#experiences"
+          className="text-clay dark:text-white hover:text-slate-500"
+        >
+          Experiences
+        </a>
+        <a
+          href="#projects"
+          className="text-clay dark:text-white hover:text-slate-500"
+        >
+          Projects
+        </a>
+        <a
+          href="#contact"
+          className="text-clay dark:text-white hover:text-slate-500"
+        >
+          Contact
+        </a>
+        <a
+          href=""
+          className="hidden text-clay dark:text-white hover:text-slate-500"
+        >
+          ···
+        </a>
+      </nav>
       <div className="flex items-center justify-center space-x-2">
         <div
           className="text-clay hover:bg-gray-400 rounded-full cursor-pointer duration-300 p-2"
@@ -91,7 +82,7 @@ const Navbar = () => {
           Resume
         </a>
       </div>
-    </div>
+    </header>
   )
 }
 
