@@ -33,7 +33,7 @@ const Projects = () => {
             <img
               src={ThaiRepose}
               alt="ThaiRepose"
-              className="object-cover rounded-t-lg h-56 w-full"
+              className="object-cover rounded-t-lg h-72 w-full"
             />
             <div className="p-3">
               <div className="flex justify-between items-center">
@@ -71,7 +71,7 @@ const Projects = () => {
             <img
               src={Voter}
               alt="Voter"
-              className="object-cover rounded-t-lg h-56 w-full"
+              className="object-cover rounded-t-lg h-72 w-full"
             />
             <div className="p-3">
               <div className="flex justify-between items-center">
