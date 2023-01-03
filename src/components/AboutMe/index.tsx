@@ -23,8 +23,7 @@ const AboutMe = () => {
             Full stack Software Engineer
           </strong>{' '}
           who also a Junior in Software and Knowledge Engineering at Kasetsart
-          University. Right now I&apos;m extremely busy with final exam and
-          projects, developing this web soon.
+          University.
         </p>
         <SocialAccounts
           cls="flex items-baseline space-x-7 pt-5 justify-center md:justify-start"
