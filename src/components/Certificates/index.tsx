@@ -1,5 +1,6 @@
 import FacebookHackerCup from '@src/assets/img/certificates/facebook-hacker-cup.png'
 import AgodaInternPitch from '@src/assets/img/certificates/Agoda-InternPitch.png'
+import GDSC from '@src/assets/img/certificates/gdsc.png'
 import ModalImage from '@avidian/react-modal-image'
 
 const Certificates = () => {
@@ -17,7 +18,7 @@ const Certificates = () => {
         <div className="w-full h-full grid md:grid-cols-3 gap-10 place-content-center pt-8">
           <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
             <ModalImage
-              className="rounded-t-lg"
+              className="rounded-t-lg h-72 w-full object-cover"
               small={FacebookHackerCup}
               medium={FacebookHackerCup}
               large={FacebookHackerCup}
@@ -41,7 +42,7 @@ const Certificates = () => {
           </div>
           <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
             <ModalImage
-              className="rounded-t-lg"
+              className="rounded-t-lg h-72 w-full object-cover"
               small={AgodaInternPitch}
               medium={AgodaInternPitch}
               large={AgodaInternPitch}
@@ -53,6 +54,25 @@ const Certificates = () => {
                 Agoda Internship Pitch Competition 2022
               </h2>
               <p className="text-sm text-left">Agoda</p>
+              <div className="flex flex-wrap pt-3 gap-x-2 gap-y-1"></div>
+            </div>
+          </div>
+          <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
+            <ModalImage
+              className="rounded-t-lg h-72 w-full object-cover"
+              small={GDSC}
+              medium={GDSC}
+              large={GDSC}
+              alt="GDSC Core Team 2021 - 2022"
+              hideDownload={true}
+            />
+            <div className="p-3">
+              <h2 className="font-semibold text-clay text-left">
+                GDSC Core Team Member 2021 - 2022
+              </h2>
+              <p className="text-sm text-left">
+                Google Developer Student Clubs
+              </p>
               <div className="flex flex-wrap pt-3 gap-x-2 gap-y-1"></div>
             </div>
           </div>

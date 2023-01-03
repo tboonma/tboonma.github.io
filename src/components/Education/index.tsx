@@ -42,9 +42,10 @@ const Education = () => {
                   <p className="text-base text-gray-nevada dark:text-white">
                     Bachelor&apos;s degree - Software and Knowledge Engineering
                   </p>
-                  <p className="py-5 text-base text-clay dark:text-white-seashell">
-                    2020 - Present
-                  </p>
+                  <div className="py-5 text-base text-clay dark:text-white-seashell">
+                    <p>2020 - Present</p>
+                    <p>GPAX 3.22</p>
+                  </div>
                 </div>
               </TimelineContent>
             </TimelineItem>
