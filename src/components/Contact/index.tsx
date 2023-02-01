@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { CiMapPin } from 'react-icons/ci'
 import { AiOutlineMail } from 'react-icons/ai'
+import { BsPinMap } from 'react-icons/bs'
 
 const Contact = () => {
   const [senderName, setSenderName] = useState<string>('')
@@ -64,7 +64,7 @@ const Contact = () => {
           <div className="h-full w-full grid place-content-center space-y-4">
             <div className="flex items-center space-x-4">
               <div className="p-3 bg-blue-light text-blue-light bg-opacity-10 dark:bg-opacity-5 dark:bg-blue-dark dark:text-blue-dark rounded-lg">
-                <CiMapPin style={{ strokeWidth: '1' }} />
+                <BsPinMap style={{ strokeWidth: '0.3' }} />
               </div>
               <div className="text-left">
                 <p className="font-bold text-gray-cod dark:text-white-seashell">
