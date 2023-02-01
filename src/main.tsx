@@ -11,6 +11,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <Provider {...{ mobXStore }}>
       <App />
     </Provider>
-    <Analytics />
+    {import.meta.env.PROD ? <Analytics /> : <></>}
   </React.StrictMode>
 )
