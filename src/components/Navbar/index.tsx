@@ -9,8 +9,7 @@ const Navbar = () => {
   const store = mobXStore
   const [showBackground, setBackground] = useState<boolean>(false)
 
-  const changeThemeHandler = (event: React.MouseEvent<HTMLElement>) => {
-    event.preventDefault()
+  const changeThemeHandler = () => {
     store.setDarkMode(!store.isDarkMode)
   }
 

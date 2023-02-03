@@ -7,16 +7,8 @@ import { useEffect } from 'react'
 import Footer from './components/Footer'
 
 const App = () => {
-  const { isDarkMode, setDarkMode } = mobXStore
+  const { isDarkMode } = mobXStore
 
-  useEffect(() => {
-    const systemDarkScheme = window.matchMedia('(prefers-color-scheme: dark)')
-    setDarkMode(systemDarkScheme.matches)
-    systemDarkScheme.addEventListener('change', (event) => {
-      const colorScheme = event.matches
-      setDarkMode(colorScheme)
-    })
-  }, [])
   return (
     <div
       className={

@@ -1,4 +1,4 @@
-import { observable, action, makeObservable } from 'mobx'
+import { observable, action, makeObservable, reaction, autorun } from 'mobx'
 
 export interface IMobXStore {
   isDarkMode: boolean
@@ -6,10 +6,15 @@ export interface IMobXStore {
 }
 
 class MobXStore implements IMobXStore {
-  @observable isDarkMode = false
+  @observable deviceScheme = window.matchMedia('(prefers-color-scheme: dark)')
+  @observable isDarkMode = false || this.deviceScheme.matches
+  env = import.meta.env
 
   constructor() {
     makeObservable(this)
+    this.deviceScheme.addEventListener('change', (event) => {
+      this.setDarkMode(event.matches)
+    })
   }
 
   @action.bound
