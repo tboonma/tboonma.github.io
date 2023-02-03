@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FormEventHandler, useState } from 'react'
 import { AiOutlineMail } from 'react-icons/ai'
 import { BsPinMap } from 'react-icons/bs'
 
@@ -6,6 +6,12 @@ const Contact = () => {
   const [senderName, setSenderName] = useState<string>('')
   const [message, setMessage] = useState<string>('')
   const [mailSubject, setMailSubject] = useState<string>('')
+
+  const createMail: FormEventHandler = (event) => {
+    event.preventDefault()
+    const mailBody = message + '%0A%0AFrom:%20' + senderName
+    window.location.href = `mailto:contact@tawanb.dev?subject=${mailSubject}&body=${mailBody}`
+  }
 
   return (
     <div
@@ -22,7 +28,7 @@ const Contact = () => {
           </h1>
         </div>
         <div className="md:flex md:justify-between w-full space-y-12">
-          <form action="mailto:contact@tawanb.dev" method="get">
+          <form onSubmit={createMail}>
             <div className="w-full h-full space-y-3">
               <input
                 type="text"
@@ -46,7 +52,7 @@ const Contact = () => {
               />
               <textarea
                 name="body"
-                id="sender"
+                id="body"
                 className="w-full py-2 px-4 font-normal resize-none min-h-[120px] rounded-md outline-blue-light dark:outline-blue-dark bg-white dark:bg-gray-nevada"
                 placeholder="Message"
                 value={message}
@@ -75,7 +81,7 @@ const Contact = () => {
                 </p>
               </div>
             </div>
-            <a href="mailto:contact@tawanb.dev" style={{ color: 'inherit' }}>
+            <div style={{ color: 'inherit', cursor: 'pointer' }} onClick={createMail}>
               <div className="flex items-center space-x-4">
                 <div className="p-3 bg-blue-light text-blue-light bg-opacity-10 dark:bg-opacity-5 dark:bg-blue-dark dark:text-blue-dark rounded-lg">
                   <AiOutlineMail style={{ strokeWidth: '2' }} />
@@ -89,7 +95,7 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </div>
