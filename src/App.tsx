@@ -3,7 +3,6 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import { mobXStore } from './stores/MobXStore'
 import { inject, observer } from 'mobx-react'
-import { useEffect } from 'react'
 import Footer from './components/Footer'
 
 const App = () => {

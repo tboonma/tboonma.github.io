@@ -1,4 +1,4 @@
-import { observable, action, makeObservable, reaction, autorun } from 'mobx'
+import { observable, action, makeObservable } from 'mobx'
 
 export interface IMobXStore {
   isDarkMode: boolean
