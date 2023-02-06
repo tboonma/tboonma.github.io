@@ -53,7 +53,7 @@ const Contact = () => {
               <textarea
                 name="body"
                 id="body"
-                className="w-full py-2 px-4 font-normal resize-none min-h-[120px] rounded-md outline-blue-light dark:outline-blue-dark bg-white dark:bg-gray-nevada"
+                className="w-full py-2 px-4 font-normal text-sm resize-none min-h-[120px] rounded-md outline-blue-light dark:outline-blue-dark bg-white dark:bg-gray-nevada"
                 placeholder="Message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
