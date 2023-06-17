@@ -56,12 +56,6 @@ const Navbar = () => {
         >
           Contact
         </a>
-        <a
-          href=""
-          className="hidden text-clay dark:text-white hover:text-slate-500"
-        >
-          ···
-        </a>
       </nav>
       <div className="flex items-center justify-center space-x-2">
         <div
