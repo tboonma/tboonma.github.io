@@ -1,5 +1,5 @@
 import FacebookHackerCup from '@src/assets/img/certificates/facebook-hacker-cup.png'
-import AgodaInternPitch from '@src/assets/img/certificates/Agoda-InternPitch.png'
+import AgodaInternPitch from '@src/assets/img/certificates/Agoda-InternPitch.jpg'
 import GDSC from '@src/assets/img/certificates/gdsc.jpg'
 import ModalImage from '@avidian/react-modal-image'
 
