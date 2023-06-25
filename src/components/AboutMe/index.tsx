@@ -1,6 +1,8 @@
 import './AboutMe.css'
-import MyPic from '@src/assets/img/profile-pic.jpg'
+import MyPicWebP from '@src/assets/img/profile-pic.webp'
+import MyPicJpg from '@src/assets/img/profile-pic.jpg'
 import SocialAccounts from '@src/components/SocialAccounts'
+import ImgWithFallback from '@src/utils/ImgWithFallback'
 
 const AboutMe = () => {
   return (
@@ -34,7 +36,8 @@ const AboutMe = () => {
         <div className="Profile max-w-xs">
           <div id="rectangle"></div>
           <div id="profile-pic">
-            <img src={MyPic} alt="MainPicture" />
+            <ImgWithFallback src={MyPicWebP} fallback={MyPicJpg} />
+            {/* <img src={MyPic} alt="MainPicture" /> */}
           </div>
         </div>
       </figure>
