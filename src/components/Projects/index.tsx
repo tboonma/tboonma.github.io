@@ -52,7 +52,8 @@ const Projects = () => {
                   className="hover:opacity-50 duration-300 p-2 border-white-seashell text-clay border-[1px] rounded-md"
                   href="https://github.com/tboonma/thairepose"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener"
+                  aria-label='ThaiRepose-GitHub'
                 >
                   <SiGithub className="w-4 h-4 text-clay" />
                 </a>
@@ -91,7 +92,8 @@ const Projects = () => {
                   className="hover:opacity-50 duration-300 p-2 border-white-seashell text-clay border-[1px] rounded-md"
                   href="https://github.com/Voter-Software-Process-2022"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener"
+                  aria-label='Yak3-GitHub'
                 >
                   <SiGithub className="w-4 h-4 text-clay" />
                 </a>

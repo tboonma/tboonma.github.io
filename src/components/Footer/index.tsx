@@ -12,7 +12,12 @@ const Footer = () => {
       </div>
       <div className="text-center text-clay dark:text-white-seashell">
         Thanks to{' '}
-        <a href="https://www.figma.com/community/file/1160861462615915842">
+        <a
+          href="https://www.figma.com/community/file/1160861462615915842"
+          target="_blank"
+          rel="noopener"
+          aria-label="Prototype"
+        >
           Portfolio Design
         </a>
       </div>

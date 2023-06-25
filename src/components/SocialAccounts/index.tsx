@@ -17,7 +17,8 @@ const SocialAccounts = ({ cls, iconSize }: SocialAccountsProps) => {
       <a
         href="https://www.linkedin.com/in/tboonma"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener"
+        aria-label="LinkedIn"
       >
         <SlSocialLinkedin
           className={
@@ -26,7 +27,12 @@ const SocialAccounts = ({ cls, iconSize }: SocialAccountsProps) => {
           }
         />
       </a>
-      <a href="https://github.com/tboonma" target="_blank" rel="noreferrer">
+      <a
+        href="https://github.com/tboonma"
+        target="_blank"
+        rel="noopener"
+        aria-label="GitHub"
+      >
         <FiGithub
           className={
             `text-clay dark:text-white-seashell hover:opacity-50 stroke-[2.6] duration-300` +
@@ -37,7 +43,8 @@ const SocialAccounts = ({ cls, iconSize }: SocialAccountsProps) => {
       <a
         href="https://www.instagram.com/tboonma_"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener"
+        aria-label="Instagram"
       >
         <GrInstagram
           className={
@@ -49,7 +56,8 @@ const SocialAccounts = ({ cls, iconSize }: SocialAccountsProps) => {
       <a
         href="https://www.facebook.com/tboonmaeiei"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener"
+        aria-label="Facebook"
       >
         <SlSocialFacebook
           className={
@@ -61,7 +69,8 @@ const SocialAccounts = ({ cls, iconSize }: SocialAccountsProps) => {
       <a
         href="https://twitter.com/Tboonmaeiei"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener"
+        aria-label="Twitter"
       >
         <SlSocialTwitter
           className={
