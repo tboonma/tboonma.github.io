@@ -1,8 +1,5 @@
-import FacebookHackerCupWebP from '@src/assets/img/certificates/facebook-hacker-cup.webp'
 import FacebookHackerCupJpg from '@src/assets/img/certificates/facebook-hacker-cup.jpg'
-import AgodaInternPitchWebP from '@src/assets/img/certificates/Agoda-InternPitch.webp'
 import AgodaInternPitchJpg from '@src/assets/img/certificates/Agoda-InternPitch.jpg'
-import GDSCWebP from '@src/assets/img/certificates/gdsc.webp'
 import GDSCJpg from '@src/assets/img/certificates/gdsc.jpg'
 import ModalImage from '@avidian/react-modal-image'
 
@@ -22,9 +19,9 @@ const Certificates = () => {
           <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
             <ModalImage
               className="rounded-t-lg h-72 w-full object-cover"
-              small={FacebookHackerCupWebP}
-              medium={FacebookHackerCupWebP}
-              large={FacebookHackerCupWebP}
+              small={FacebookHackerCupJpg}
+              medium={FacebookHackerCupJpg}
+              large={FacebookHackerCupJpg}
               alt="Facebook Hacker Cup 2021"
               hideDownload={true}
             />
@@ -46,9 +43,9 @@ const Certificates = () => {
           <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
             <ModalImage
               className="rounded-t-lg h-72 w-full object-cover"
-              small={AgodaInternPitchWebP}
-              medium={AgodaInternPitchWebP}
-              large={AgodaInternPitchWebP}
+              small={AgodaInternPitchJpg}
+              medium={AgodaInternPitchJpg}
+              large={AgodaInternPitchJpg}
               alt="Agoda Internship Pitch Competition 2022"
               hideDownload={true}
             />
@@ -63,9 +60,9 @@ const Certificates = () => {
           <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
             <ModalImage
               className="rounded-t-lg h-72 w-full object-cover"
-              small={GDSCWebP}
-              medium={GDSCWebP}
-              large={GDSCWebP}
+              small={GDSCJpg}
+              medium={GDSCJpg}
+              large={GDSCJpg}
               alt="GDSC Core Team 2021 - 2022"
               hideDownload={true}
             />
