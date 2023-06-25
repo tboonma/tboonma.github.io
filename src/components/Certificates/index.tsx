@@ -1,4 +1,4 @@
-import FacebookHackerCup from '@src/assets/img/certificates/facebook-hacker-cup.png'
+import FacebookHackerCup from '@src/assets/img/certificates/facebook-hacker-cup.jpg'
 import AgodaInternPitch from '@src/assets/img/certificates/Agoda-InternPitch.jpg'
 import GDSC from '@src/assets/img/certificates/gdsc.jpg'
 import ModalImage from '@avidian/react-modal-image'

@@ -1,10 +1,13 @@
 import axios from 'axios'
 import './Projects.css'
-import ThaiRepose from '@src/assets/img/projects/thairepose.png'
-import Voter from '@src/assets/img/projects/voter.png'
+import ThaiReposeWebP from '@src/assets/img/projects/thairepose.jpg'
+import VoterWebP from '@src/assets/img/projects/voter.jpg'
+import ThaiReposeJpg from '@src/assets/img/projects/thairepose.jpg'
+import VoterJpg from '@src/assets/img/projects/voter.jpg'
 import { SiGithub } from 'react-icons/si'
 import { useEffect } from 'react'
 import ReadMore from '../ReadMore'
+import ImgWithFallback from '@src/utils/ImgWithFallback'
 
 const Projects = () => {
   const GetAllRepo = async () => {
@@ -30,8 +33,9 @@ const Projects = () => {
         </div>
         <div className="w-full h-full grid md:grid-cols-3 gap-10 place-content-center pt-8">
           <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
-            <img
-              src={ThaiRepose}
+            <ImgWithFallback
+              src={ThaiReposeWebP}
+              fallback={ThaiReposeJpg}
               alt="ThaiRepose"
               className="object-cover rounded-t-lg h-72 w-full"
             />
@@ -53,7 +57,7 @@ const Projects = () => {
                   href="https://github.com/tboonma/thairepose"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label='ThaiRepose-GitHub'
+                  aria-label="ThaiRepose-GitHub"
                 >
                   <SiGithub className="w-4 h-4 text-clay" />
                 </a>
@@ -69,9 +73,10 @@ const Projects = () => {
             </div>
           </div>
           <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
-            <img
-              src={Voter}
-              alt="Voter"
+            <ImgWithFallback
+              src={VoterWebP}
+              fallback={VoterJpg}
+              alt="Voter Project"
               className="object-cover rounded-t-lg h-72 w-full"
             />
             <div className="p-3">
@@ -93,7 +98,7 @@ const Projects = () => {
                   href="https://github.com/Voter-Software-Process-2022"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label='Yak3-GitHub'
+                  aria-label="Yak3-GitHub"
                 >
                   <SiGithub className="w-4 h-4 text-clay" />
                 </a>

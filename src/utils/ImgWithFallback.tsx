@@ -1,4 +1,4 @@
-interface ImgWithFallbackProps {
+interface ImgWithFallbackProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string
   fallback: string
   alt: string
