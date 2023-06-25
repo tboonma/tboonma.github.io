@@ -17,7 +17,7 @@ const SocialAccounts = ({ cls, iconSize }: SocialAccountsProps) => {
       <a
         href="https://www.linkedin.com/in/tboonma"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         aria-label="LinkedIn"
       >
         <SlSocialLinkedin
@@ -30,7 +30,7 @@ const SocialAccounts = ({ cls, iconSize }: SocialAccountsProps) => {
       <a
         href="https://github.com/tboonma"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         aria-label="GitHub"
       >
         <FiGithub
@@ -43,7 +43,7 @@ const SocialAccounts = ({ cls, iconSize }: SocialAccountsProps) => {
       <a
         href="https://www.instagram.com/tboonma_"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         aria-label="Instagram"
       >
         <GrInstagram
@@ -56,7 +56,7 @@ const SocialAccounts = ({ cls, iconSize }: SocialAccountsProps) => {
       <a
         href="https://www.facebook.com/tboonmaeiei"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         aria-label="Facebook"
       >
         <SlSocialFacebook
@@ -69,7 +69,7 @@ const SocialAccounts = ({ cls, iconSize }: SocialAccountsProps) => {
       <a
         href="https://twitter.com/Tboonmaeiei"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         aria-label="Twitter"
       >
         <SlSocialTwitter
