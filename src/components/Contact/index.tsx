@@ -43,7 +43,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="subject"
-                id="sender"
+                id="title"
                 className="w-full text-sm py-2 px-4 font-normal rounded-md outline-blue-light dark:outline-blue-dark bg-white dark:bg-gray-nevada"
                 placeholder="Subject"
                 value={mailSubject}
