@@ -1,6 +1,9 @@
-import FacebookHackerCup from '@src/assets/img/certificates/facebook-hacker-cup.jpg'
-import AgodaInternPitch from '@src/assets/img/certificates/Agoda-InternPitch.jpg'
-import GDSC from '@src/assets/img/certificates/gdsc.jpg'
+import FacebookHackerCupWebP from '@src/assets/img/certificates/facebook-hacker-cup.webp'
+import FacebookHackerCupJpg from '@src/assets/img/certificates/facebook-hacker-cup.jpg'
+import AgodaInternPitchWebP from '@src/assets/img/certificates/Agoda-InternPitch.webp'
+import AgodaInternPitchJpg from '@src/assets/img/certificates/Agoda-InternPitch.jpg'
+import GDSCWebP from '@src/assets/img/certificates/gdsc.webp'
+import GDSCJpg from '@src/assets/img/certificates/gdsc.jpg'
 import ModalImage from '@avidian/react-modal-image'
 
 const Certificates = () => {
@@ -19,9 +22,9 @@ const Certificates = () => {
           <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
             <ModalImage
               className="rounded-t-lg h-72 w-full object-cover"
-              small={FacebookHackerCup}
-              medium={FacebookHackerCup}
-              large={FacebookHackerCup}
+              small={FacebookHackerCupWebP}
+              medium={FacebookHackerCupWebP}
+              large={FacebookHackerCupWebP}
               alt="Facebook Hacker Cup 2021"
               hideDownload={true}
             />
@@ -43,9 +46,9 @@ const Certificates = () => {
           <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
             <ModalImage
               className="rounded-t-lg h-72 w-full object-cover"
-              small={AgodaInternPitch}
-              medium={AgodaInternPitch}
-              large={AgodaInternPitch}
+              small={AgodaInternPitchWebP}
+              medium={AgodaInternPitchWebP}
+              large={AgodaInternPitchWebP}
               alt="Agoda Internship Pitch Competition 2022"
               hideDownload={true}
             />
@@ -60,9 +63,9 @@ const Certificates = () => {
           <div className="border-gray-wildsand border-[1px] rounded-lg dark:border-0 dark:bg-white">
             <ModalImage
               className="rounded-t-lg h-72 w-full object-cover"
-              small={GDSC}
-              medium={GDSC}
-              large={GDSC}
+              small={GDSCWebP}
+              medium={GDSCWebP}
+              large={GDSCWebP}
               alt="GDSC Core Team 2021 - 2022"
               hideDownload={true}
             />
