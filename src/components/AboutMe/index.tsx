@@ -36,8 +36,7 @@ const AboutMe = () => {
         <div className="Profile max-w-xs">
           <div id="rectangle"></div>
           <div id="profile-pic">
-            <ImgWithFallback src={MyPicWebP} fallback={MyPicJpg} />
-            {/* <img src={MyPic} alt="MainPicture" /> */}
+            <ImgWithFallback src={MyPicWebP} fallback={MyPicJpg} alt='Profile Picture' />
           </div>
         </div>
       </figure>
