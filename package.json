@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/tboonma/tboonma.github.io/issues"
   },
-  "homepage": "https://tboonma.github.io",
+  "homepage": "https://tawanb.dev",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
