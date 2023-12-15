@@ -1,4 +1,4 @@
-import { observable, action, makeObservable } from 'mobx'
+import { observable, action, makeObservable, reaction } from 'mobx'
 
 export interface IMobXStore {
   isDarkMode: boolean
@@ -12,14 +12,28 @@ class MobXStore implements IMobXStore {
 
   constructor() {
     makeObservable(this)
+
+    this.updateDarkClassName()
+
     this.deviceScheme.addEventListener('change', (event) => {
       this.setDarkMode(event.matches)
     })
+
+    reaction(
+      () => this.isDarkMode,
+      this.updateDarkClassName
+    )
   }
 
   @action.bound
   setDarkMode(state: boolean) {
     this.isDarkMode = state
+  }
+
+  updateDarkClassName = () => {
+    const rootElement = document.getElementById('root')
+    if (rootElement === null) return;
+    rootElement.className = this.isDarkMode ? 'dark' : ''
   }
 }
 export const mobXStore = new MobXStore()

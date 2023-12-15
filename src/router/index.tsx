@@ -1,11 +1,11 @@
-import App from "@src/App";
+import Home from "@src/pages/Home";
 import NotFound from "@src/pages/NotFound";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router  = createBrowserRouter([
     {
         path: '/',
-        element: <App />,
+        element: <Home />,
         errorElement: <NotFound />
     }
 ])
