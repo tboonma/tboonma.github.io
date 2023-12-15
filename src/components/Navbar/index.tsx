@@ -5,7 +5,7 @@ import { inject, observer } from 'mobx-react'
 import { mobXStore } from '@src/stores/MobXStore'
 import Resume from '@src/assets/resume.pdf'
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const store = mobXStore
   const [showBackground, setBackground] = useState<boolean>(false)
 
