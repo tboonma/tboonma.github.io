@@ -13,12 +13,12 @@ const Navbar: React.FC = () => {
     store.setDarkMode(!store.isDarkMode)
   }
 
-  const changeBackgroundColor = () => {
+  const triggerBackground = () => {
     setBackground(window.scrollY >= 80)
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', changeBackgroundColor)
+    window.addEventListener('scroll', triggerBackground)
   })
 
   return (
