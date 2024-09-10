@@ -31,6 +31,8 @@ jobs:
           node-version-file: '.nvmrc'
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
+      - name: check token
+        run: echo "Token=${{ secrets.VERCEL_ACCESS_TOKEN }}..."
       - name: Deploy Beta
         id: deploy
         run: echo "url=$(vercel --token=${{ secrets.VERCEL_ACCESS_TOKEN }})" >> $GITHUB_OUTPUT
