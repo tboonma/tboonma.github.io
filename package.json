@@ -16,6 +16,9 @@
     "url": "https://github.com/tboonma/tboonma.github.io/issues"
   },
   "homepage": "https://tawanb.dev",
+  "engines": {
+    "node": ">=22.19.0"
+  },
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev --host",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",

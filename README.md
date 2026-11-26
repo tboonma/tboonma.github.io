@@ -12,6 +12,8 @@ Sentences can include `{hotel}`, `{rooms}`, `{district}`, `{province}`, `{countr
 
 ## Commands
 
+Node 22.22 (see `.nvmrc`). `yarn lint` needs Node 22.19 or newer.
+
 ```bash
 yarn install
 yarn dev
