@@ -1,0 +1,34 @@
+---
+import { copy } from '../data/copy'
+import { localizedPath, site, type Lang } from '../data/site'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const t = copy[lang]
+const home = localizedPath(lang, '/')
+const year = new Date().getFullYear()
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="footer-name" href={home}>{site.shortName}</a>
+      <p class="footer-meta">{t.footer.blurb}</p>
+      <p class="footer-meta">© {year} {site.name}</p>
+    </div>
+    <nav aria-label={t.footer.navLabel}>
+      <ul class="footer-links">
+        {t.nav.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <nav class="lang" aria-label={t.langLabel}>
+      <a href={localizedPath('th', '/')} hreflang="th" lang="th" aria-current={lang === 'th' ? 'page' : undefined}>{t.langTh}</a>
+      <a href={localizedPath('en', '/')} hreflang="en" lang="en" aria-current={lang === 'en' ? 'page' : undefined}>{t.langEn}</a>
+    </nav>
+  </div>
+</footer>

@@ -1,0 +1,18 @@
+---
+import HotelSample from '../../../components/samples/HotelSample.astro'
+import PortfolioSample from '../../../components/samples/PortfolioSample.astro'
+import ShopSample from '../../../components/samples/ShopSample.astro'
+
+export function getStaticPaths() {
+  return [{ params: { slug: 'ikon' } }, { params: { slug: 'shop' } }, { params: { slug: 'portfolio' } }]
+}
+
+const { slug } = Astro.params
+if (slug !== 'ikon' && slug !== 'shop' && slug !== 'portfolio') {
+  throw new Error(`Unexpected sample: ${String(slug)}`)
+}
+---
+
+{slug === 'ikon' && <HotelSample lang="en" />}
+{slug === 'shop' && <ShopSample lang="en" />}
+{slug === 'portfolio' && <PortfolioSample lang="en" />}

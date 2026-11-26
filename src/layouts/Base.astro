@@ -1,0 +1,157 @@
+---
+import '../styles/global.css'
+import { absoluteUrl, localizedPath, site, type Lang } from '../data/site'
+
+interface Props {
+  lang: Lang
+  title: string
+  description: string
+  ogAlt: string
+  route?: string
+  noindex?: boolean
+  profile?: boolean
+  bodyClass?: string
+  skip: string
+}
+
+const { lang, title, description, ogAlt, route, noindex = false, profile = false, bodyClass, skip } = Astro.props
+const path = route ? localizedPath(lang, route) : undefined
+const canonical = path ? absoluteUrl(path) : undefined
+const thHref = route ? absoluteUrl(localizedPath('th', route)) : undefined
+const enHref = route ? absoluteUrl(localizedPath('en', route)) : undefined
+const ogImage = absoluteUrl('/og.png')
+const fontPreload =
+  lang === 'th'
+    ? ['/fonts/noto-serif-thai-thai.woff2', '/fonts/noto-sans-thai-thai.woff2']
+    : ['/fonts/noto-serif-thai-latin.woff2', '/fonts/noto-sans-thai-latin.woff2']
+
+const twitter = site.socials.find((item) => item.id === 'twitter')
+const twitterHandle = twitter ? `@${twitter.href.split('/').filter(Boolean).pop()}` : undefined
+
+const jsonLd = profile
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: site.name,
+      alternateName: site.shortName,
+      url: site.url,
+      email: site.email,
+      image: absoluteUrl('/images/tawan-800.webp'),
+      jobTitle: 'Owner and CEO, THE iKON APARTMENT',
+      sameAs: site.socials.map((item) => item.href),
+      workLocation: {
+        '@type': 'Place',
+        name: site.hotel.name,
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: site.hotel.district.en,
+          addressRegion: site.hotel.province.en,
+          addressCountry: 'TH'
+        }
+      },
+      makesOffer: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Landing page',
+            areaServed: 'TH'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Portfolio website',
+            areaServed: 'TH'
+          }
+        }
+      ]
+    }
+  : undefined
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={site.name} />
+    <meta name="theme-color" content="#1E3A8A" />
+    <meta name="color-scheme" content="light" />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    {thHref && enHref && (
+      <>
+        <link rel="alternate" hreflang="th" href={thHref} />
+        <link rel="alternate" hreflang="en" href={enHref} />
+        <link rel="alternate" hreflang="x-default" href={thHref} />
+      </>
+    )}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.shortName} />
+    <meta property="og:locale" content={lang === 'th' ? 'th_TH' : 'en_US'} />
+    <meta property="og:locale:alternate" content={lang === 'th' ? 'en_US' : 'th_TH'} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    {twitterHandle && <meta name="twitter:creator" content={twitterHandle} />}
+    <link rel="icon" href="/favicon.ico" />
+    {fontPreload.map((href) => (
+      <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />
+    ))}
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body class={bodyClass}>
+    <a class="skip-link" href="#main">{skip}</a>
+    <slot />
+    <script is:inline>
+      (function () {
+        var button = document.getElementById('menu-button')
+        var panel = document.getElementById('site-menu')
+        if (!button || !panel) return
+        var mq = window.matchMedia('(min-width: 1040px)')
+        var labelOpen = button.getAttribute('data-label-open') || 'Open menu'
+        var labelClose = button.getAttribute('data-label-close') || 'Close menu'
+        function desktop() { return mq.matches }
+        function setOpen(open) {
+          var expanded = open || desktop()
+          panel.setAttribute('data-open', open ? 'true' : 'false')
+          button.setAttribute('aria-expanded', expanded ? 'true' : 'false')
+          button.setAttribute('aria-label', open && !desktop() ? labelClose : labelOpen)
+        }
+        button.addEventListener('click', function () {
+          setOpen(panel.getAttribute('data-open') !== 'true')
+        })
+        panel.addEventListener('click', function (event) {
+          var target = event.target
+          if (target && target.closest && target.closest('a')) setOpen(false)
+        })
+        document.addEventListener('click', function (event) {
+          var target = event.target
+          if (!target) return
+          if (button.contains(target) || panel.contains(target)) return
+          setOpen(false)
+        })
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') {
+            setOpen(false)
+            if (!desktop()) button.focus()
+          }
+        })
+        if (mq.addEventListener) mq.addEventListener('change', function () { setOpen(false) })
+        setOpen(false)
+      })()
+    </script>
+  </body>
+</html>

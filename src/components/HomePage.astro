@@ -1,0 +1,260 @@
+---
+import '../styles/home.css'
+import { copy } from '../data/copy'
+import { fill, localizedPath, samplePath, site, type Lang } from '../data/site'
+import Base from '../layouts/Base.astro'
+import Icon from './Icon.astro'
+import SiteFooter from './SiteFooter.astro'
+import SiteHeader from './SiteHeader.astro'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const t = copy[lang]
+const f = (value: string) => fill(value, lang)
+const serviceIcon = {
+  landing: 'layout',
+  portfolio: 'user'
+} as const
+---
+
+<Base
+  lang={lang}
+  title={t.meta.title}
+  description={t.meta.description}
+  ogAlt={t.meta.ogAlt}
+  route="/"
+  profile
+  skip={t.skip}
+>
+  <SiteHeader lang={lang} />
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow"><span class="dash" aria-hidden="true"></span>{t.hero.eyebrow}</p>
+          <h1 id="hero-title">{t.hero.title}</h1>
+          <p class="lede">{f(t.hero.lede)}</p>
+          <p class="support">{t.hero.support}</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href={site.fastworkUrl} target="_blank" rel="noopener noreferrer">
+              {t.primaryCta}
+              <Icon name="external" />
+              <span class="sr-only">({t.newTab})</span>
+            </a>
+            <a class="btn btn-secondary" href="#contact">{t.hero.secondaryCta}</a>
+          </div>
+          <dl class="facts">
+            {t.facts.map((fact) => (
+              <div class="fact">
+                <dt>{fact.k}</dt>
+                <dd>{f(fact.v)}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <figure class="portrait">
+          <img
+            src="/images/tawan-800.webp"
+            srcset="/images/tawan-480.webp 480w, /images/tawan-800.webp 800w"
+            sizes="(min-width: 900px) 420px, 88vw"
+            width="800"
+            height="1000"
+            alt={t.hero.photoAlt}
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="dash" aria-hidden="true"></span>{t.services.eyebrow}</p>
+          <h2 id="services-title">{t.services.title}</h2>
+          <p>{t.services.intro}</p>
+        </div>
+        <div class="grid-2">
+          {t.services.items.map((item) => (
+            <article class="card">
+              <div class="icon-well">
+                <Icon name={serviceIcon[item.id]} />
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <ul class="points">
+                {item.points.map((point) => (
+                  <li><Icon name="check" /><span>{point}</span></li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section band" id="packages" aria-labelledby="packages-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="dash" aria-hidden="true"></span>{t.packages.eyebrow}</p>
+          <h2 id="packages-title">{t.packages.title}</h2>
+          <p>{t.packages.intro}</p>
+        </div>
+        <div class="grid-2">
+          {t.packages.items.map((item) => (
+            <article class="package">
+              <h3>{item.title}</h3>
+              <p class="audience">{item.audience}</p>
+              <p class="price">{site.prices[item.id]}</p>
+              <p class="price-note">{t.packages.priceNote}</p>
+              <p class="includes-label">{t.packages.includesLabel}</p>
+              <ul>
+                {item.includes.map((line) => (
+                  <li><Icon name="check" /><span>{line}</span></li>
+                ))}
+              </ul>
+              <a class="btn btn-primary" href={site.fastworkUrl} target="_blank" rel="noopener noreferrer">
+                {t.primaryCta}
+                <Icon name="external" />
+                <span class="sr-only">({t.newTab})</span>
+              </a>
+            </article>
+          ))}
+        </div>
+        <p class="fine-print">{t.packages.note}</p>
+      </div>
+    </section>
+
+    <section class="section" id="showcase" aria-labelledby="showcase-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="dash" aria-hidden="true"></span>{t.showcase.eyebrow}</p>
+          <h2 id="showcase-title">{t.showcase.title}</h2>
+          <p>{t.showcase.intro}</p>
+        </div>
+        <div class="grid-3">
+          {t.showcase.items.map((item) => (
+            <a class="card showcase-card card-link" href={localizedPath(lang, samplePath[item.id])}>
+              {item.id === 'ikon' && (
+                <div class="mock mock-hotel" aria-hidden="true">
+                  <span class="mock-kicker"></span>
+                  <span class="mock-line"></span>
+                  <span class="mock-line short"></span>
+                  <span class="mock-base"></span>
+                </div>
+              )}
+              {item.id === 'shop' && (
+                <div class="mock mock-shop" aria-hidden="true">
+                  <div><div class="swatch a"></div><span class="line"></span></div>
+                  <div><div class="swatch b"></div><span class="line"></span></div>
+                  <div><div class="swatch c"></div><span class="line"></span></div>
+                </div>
+              )}
+              {item.id === 'portfolio' && (
+                <div class="mock mock-folio" aria-hidden="true">
+                  <div class="mono"></div>
+                  <div>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+              )}
+              <p class="badge">{t.showcase.badge}</p>
+              <h3>{f(item.title)}</h3>
+              <p>{f(item.text)}</p>
+              <span class="more">{t.showcase.view} <Icon name="arrow" /></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="dash" aria-hidden="true"></span>{t.process.eyebrow}</p>
+          <h2 id="process-title">{t.process.title}</h2>
+          <p>{t.process.intro}</p>
+        </div>
+        <ol class="steps">
+          {t.process.steps.map((step, index) => (
+            <li class="step">
+              <span class="step-index">{index + 1}</span>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="section band" id="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="dash" aria-hidden="true"></span>{t.faq.eyebrow}</p>
+          <h2 id="faq-title">{t.faq.title}</h2>
+        </div>
+        <div class="faq-list">
+          {t.faq.items.map((item) => (
+            <details class="faq" name="faq">
+              <summary><h3>{item.q}</h3></summary>
+              <p>{f(item.a)}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="dash" aria-hidden="true"></span>{t.about.eyebrow}</p>
+          <h2 id="about-title">{t.about.title}</h2>
+          <p>{t.about.intro}</p>
+        </div>
+        <div class="about-list">
+          {t.about.items.map((item) => (
+            <article class="about-item">
+              <h3>{f(item.title)}</h3>
+              <p class="about-meta">{f(item.meta)}</p>
+              <p>{f(item.text)}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="dash" aria-hidden="true"></span>{t.contact.eyebrow}</p>
+          <h2 id="contact-title">{t.contact.title}</h2>
+          <p>{t.contact.text}</p>
+        </div>
+        <a class="btn btn-primary" href={site.fastworkUrl} target="_blank" rel="noopener noreferrer">
+          {t.primaryCta}
+          <Icon name="external" />
+          <span class="sr-only">({t.newTab})</span>
+        </a>
+        <p>
+          <span class="social-label">{t.contact.emailLabel}</span>
+          <a class="mail-link" href={`mailto:${site.email}`}>{site.email}</a>
+        </p>
+        <p class="social-label" id="social-label">{t.contact.socialLabel}</p>
+        <ul class="socials" aria-labelledby="social-label">
+          {site.socials.map((item) => (
+            <li>
+              <a href={item.href} target="_blank" rel="noopener noreferrer">
+                {t.social[item.id]}
+                <span class="sr-only">({t.newTab})</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  </main>
+  <SiteFooter lang={lang} />
+</Base>

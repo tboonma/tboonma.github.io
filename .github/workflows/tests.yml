@@ -8,7 +8,7 @@ jobs:
     name: Lint test
     runs-on: ubuntu-latest
     steps:
-      - name: Chackout
+      - name: Checkout
         uses: actions/checkout@v3
       - name: Set up NodeJS environment
         uses: actions/setup-node@v2
@@ -20,3 +20,5 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Perform Lint Test
         run: yarn lint
+      - name: Build site
+        run: yarn build

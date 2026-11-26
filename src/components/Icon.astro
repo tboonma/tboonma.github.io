@@ -1,0 +1,38 @@
+---
+interface Props {
+  name: 'menu' | 'close' | 'layout' | 'user' | 'check' | 'external' | 'arrow'
+  class?: string
+}
+
+const { name, class: className } = Astro.props
+---
+
+<svg
+  class:list={['icon', className]}
+  viewBox="0 0 24 24"
+  aria-hidden="true"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  {name === 'menu' && <path d="M4 7h16M4 12h16M4 17h16" />}
+  {name === 'close' && <path d="M6 6l12 12M18 6 6 18" />}
+  {name === 'layout' && <path d="M4 4h16v16H4zM4 9h16M9 9v11" />}
+  {name === 'user' && (
+    <>
+      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </>
+  )}
+  {name === 'check' && <path d="M20 6 9 17l-5-5" />}
+  {name === 'arrow' && <path d="M5 12h14M13 6l6 6-6 6" />}
+  {name === 'external' && (
+    <>
+      <path d="M14 5h5v5" />
+      <path d="M19 5 10 14" />
+      <path d="M17 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h5" />
+    </>
+  )}
+</svg>

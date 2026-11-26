@@ -1,0 +1,56 @@
+---
+import '../../styles/samples.css'
+import { samples } from '../../data/samples'
+import { copy } from '../../data/copy'
+import { localizedPath, samplePath, site, type Lang } from '../../data/site'
+import Base from '../../layouts/Base.astro'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const t = samples[lang].portfolio
+const ui = copy[lang]
+const route = samplePath.portfolio
+---
+
+<Base lang={lang} title={t.title} description={t.description} ogAlt={t.ogAlt} route={route} noindex skip={ui.skip}>
+  <p class="sample-banner">{t.banner}</p>
+  <header class="wrap sample-top">
+    <a href={localizedPath(lang, '/')}>{t.back}</a>
+    <nav class="lang" aria-label={ui.langLabel}>
+      <a href={localizedPath('th', route)} hreflang="th" lang="th" aria-current={lang === 'th' ? 'page' : undefined}>{ui.langTh}</a>
+      <a href={localizedPath('en', route)} hreflang="en" lang="en" aria-current={lang === 'en' ? 'page' : undefined}>{ui.langEn}</a>
+    </nav>
+  </header>
+  <main id="main" class="wrap sample-main" tabindex="-1">
+    <section class="folio-hero">
+      <p class="eyebrow"><span class="dash" aria-hidden="true"></span>{t.kicker}</p>
+      <h1>{t.name}</h1>
+      <p class="price-note">{t.role}</p>
+      <p class="lede">{t.intro}</p>
+    </section>
+    <section class="sample-block" aria-labelledby="work-title">
+      <h2 id="work-title">{t.workTitle}</h2>
+      <ol class="work-list">
+        {t.projects.map((project, index) => (
+          <li class="work-item">
+            <span class="work-num">{index + 1}</span>
+            <div>
+              <h3>{project.title}</h3>
+              <p>{project.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+    <section class="sample-block sample-card" aria-labelledby="folio-contact-title">
+      <h2 id="folio-contact-title">{t.contactTitle}</h2>
+      <p>{t.contact}</p>
+      <p class="about-meta">{t.emailLabel}</p>
+      <p><a href={`mailto:${site.sampleEmail}`}>{site.sampleEmail}</a></p>
+    </section>
+    <p class="sample-footer"><a href={localizedPath(lang, '/')}>{t.back}</a></p>
+  </main>
+</Base>

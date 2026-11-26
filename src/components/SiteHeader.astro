@@ -1,0 +1,65 @@
+---
+import { copy } from '../data/copy'
+import { localizedPath, site, type Lang } from '../data/site'
+import Icon from './Icon.astro'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const t = copy[lang]
+const home = localizedPath(lang, '/')
+---
+
+<header class="site-header">
+  <div class="gold-bar" aria-hidden="true"></div>
+  <div class="wrap header-bar">
+    <a class="logo" href={home}>{site.shortName}</a>
+    <nav id="site-menu" class="nav-panel" data-open="false" aria-label={t.navLabel}>
+      <div class="nav-inner">
+        <a class="btn btn-primary nav-cta" href={site.fastworkUrl} target="_blank" rel="noopener noreferrer">
+          {t.primaryCta}
+          <Icon name="external" />
+          <span class="sr-only">({t.newTab})</span>
+        </a>
+        <div class="nav-list">
+          {t.nav.map((item) => (
+            <a href={item.href}>{item.label}</a>
+          ))}
+        </div>
+      </div>
+    </nav>
+    <div class="header-tools">
+      <nav class="lang" aria-label={t.langLabel}>
+        <a href={localizedPath('th', '/')} hreflang="th" lang="th" aria-current={lang === 'th' ? 'page' : undefined}>{t.langTh}</a>
+        <a href={localizedPath('en', '/')} hreflang="en" lang="en" aria-current={lang === 'en' ? 'page' : undefined}>{t.langEn}</a>
+      </nav>
+      <a class="btn btn-primary desktop-cta" href={site.fastworkUrl} target="_blank" rel="noopener noreferrer">
+        {t.primaryCta}
+        <Icon name="external" />
+        <span class="sr-only">({t.newTab})</span>
+      </a>
+      <button
+        type="button"
+        id="menu-button"
+        class="menu-button"
+        aria-expanded="false"
+        aria-controls="site-menu"
+        aria-label={t.menuOpen}
+        data-label-open={t.menuOpen}
+        data-label-close={t.menuClose}
+      >
+        <Icon name="menu" class="icon-open" />
+        <Icon name="close" class="icon-close" />
+      </button>
+    </div>
+  </div>
+  <noscript>
+    <style>
+      @media (max-width: 1039px) {
+        #site-menu { display: block; position: static; box-shadow: none; }
+      }
+    </style>
+  </noscript>
+</header>

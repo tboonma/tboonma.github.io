@@ -1,0 +1,26 @@
+---
+import { copy } from '../data/copy'
+import { site } from '../data/site'
+import Base from '../layouts/Base.astro'
+
+const th = copy.th
+const en = copy.en
+---
+
+<Base lang="th" title={`${th.notFound.title} | ${site.shortName}`} description={th.notFound.text} ogAlt={th.notFound.title} noindex skip={th.skip}>
+  <header class="site-header">
+    <div class="gold-bar" aria-hidden="true"></div>
+    <div class="wrap header-bar">
+      <a class="logo" href="/">{site.shortName}</a>
+    </div>
+  </header>
+  <main id="main" class="wrap section" tabindex="-1">
+    <h1>{th.notFound.title}</h1>
+    <p>{th.notFound.text}</p>
+    <p lang="en">{en.notFound.text}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/">{th.notFound.home}</a>
+      <a class="btn btn-secondary" href="/en/" lang="en">{en.notFound.home}</a>
+    </div>
+  </main>
+</Base>

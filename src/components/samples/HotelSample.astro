@@ -1,0 +1,81 @@
+---
+import '../../styles/samples.css'
+import { samples } from '../../data/samples'
+import { copy } from '../../data/copy'
+import { fill, localizedPath, samplePath, site, type Lang } from '../../data/site'
+import Base from '../../layouts/Base.astro'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const t = samples[lang].hotel
+const ui = copy[lang]
+const f = (value: string) => fill(value, lang)
+const route = samplePath.ikon
+const rooms = Array.from({ length: site.hotel.rooms }, (_, index) => index + 1)
+---
+
+<Base lang={lang} title={f(t.title)} description={f(t.description)} ogAlt={f(t.ogAlt)} route={route} noindex skip={ui.skip}>
+  <p class="sample-banner">{f(t.banner)}</p>
+  <header class="wrap sample-top">
+    <a href={localizedPath(lang, '/')}>{t.back}</a>
+    <nav aria-label={ui.navLabel}>
+      <a href="#overview">{t.navOverview}</a>
+      <a href="#stay">{t.navStay}</a>
+      <a href="#place">{t.navPlace}</a>
+    </nav>
+    <nav class="lang" aria-label={ui.langLabel}>
+      <a href={localizedPath('th', route)} hreflang="th" lang="th" aria-current={lang === 'th' ? 'page' : undefined}>{ui.langTh}</a>
+      <a href={localizedPath('en', route)} hreflang="en" lang="en" aria-current={lang === 'en' ? 'page' : undefined}>{ui.langEn}</a>
+    </nav>
+  </header>
+  <main id="main" class="wrap sample-main" tabindex="-1">
+    <section class="hotel-hero" id="overview" aria-labelledby="hotel-title">
+      <p class="eyebrow"><span class="dash" aria-hidden="true"></span>{f(t.kicker)}</p>
+      <h1 id="hotel-title" lang="en">{site.hotel.name}</h1>
+      <p class="hero-text">{f(t.heroText)}</p>
+    </section>
+
+    <section class="sample-block hotel-split" aria-labelledby="overview-title">
+      <div class="sample-card">
+        <h2 id="overview-title">{t.overviewTitle}</h2>
+        <p>{f(t.overview)}</p>
+      </div>
+      <div class="sample-card">
+        <p class="stay-label">{f(t.stayLabel)}</p>
+        <p>{f(t.place)}</p>
+      </div>
+    </section>
+
+    <section class="sample-block" id="stay" aria-labelledby="stay-title">
+      <h2 id="stay-title">{t.stayTitle}</h2>
+      <p>{f(t.stayLead)}</p>
+      <ul class="room-grid" aria-hidden="true">
+        {rooms.map((room) => <li data-room={room}></li>)}
+      </ul>
+    </section>
+
+    <section class="sample-block" id="place" aria-labelledby="place-title">
+      <div class="sample-card">
+        <h2 id="place-title">{t.placeTitle}</h2>
+        <p>{f(t.place)}</p>
+      </div>
+    </section>
+
+    <section class="sample-block" aria-labelledby="missing-title">
+      <h2 id="missing-title">{t.missingTitle}</h2>
+      <p>{t.missingNote}</p>
+      <dl class="spec">
+        {t.missing.map((label) => (
+          <div class="spec-row">
+            <dt>{label}</dt>
+            <dd>{t.missingValue}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+    <p class="sample-footer">{f(t.banner)}</p>
+  </main>
+</Base>

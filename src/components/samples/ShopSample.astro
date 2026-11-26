@@ -1,0 +1,67 @@
+---
+import '../../styles/samples.css'
+import { samples } from '../../data/samples'
+import { copy } from '../../data/copy'
+import { localizedPath, samplePath, site, type Lang } from '../../data/site'
+import Base from '../../layouts/Base.astro'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const t = samples[lang].shop
+const ui = copy[lang]
+const route = samplePath.shop
+---
+
+<Base
+  lang={lang}
+  title={t.title}
+  description={t.description}
+  ogAlt={t.ogAlt}
+  route={route}
+  noindex
+  skip={ui.skip}
+  bodyClass="theme-shop"
+>
+  <p class="sample-banner">{t.banner}</p>
+  <header class="wrap sample-top">
+    <a href={localizedPath(lang, '/')}>{t.back}</a>
+    <nav class="lang" aria-label={ui.langLabel}>
+      <a href={localizedPath('th', route)} hreflang="th" lang="th" aria-current={lang === 'th' ? 'page' : undefined}>{ui.langTh}</a>
+      <a href={localizedPath('en', route)} hreflang="en" lang="en" aria-current={lang === 'en' ? 'page' : undefined}>{ui.langEn}</a>
+    </nav>
+  </header>
+  <main id="main" class="wrap sample-main" tabindex="-1">
+    <section class="shop-hero">
+      <p class="eyebrow"><span class="dash" aria-hidden="true"></span>{t.kicker}</p>
+      <h1>{t.name}</h1>
+      <p class="lede">{t.hero}</p>
+    </section>
+    <section class="sample-block" aria-labelledby="products-title">
+      <h2 id="products-title">{t.productsTitle}</h2>
+      <div class="product-grid">
+        {t.products.map((product, index) => (
+          <article class="product" data-swatch={index + 1}>
+            <div class="swatch" aria-hidden="true"></div>
+            <div class="product-body">
+              <h3>{product.name}</h3>
+              <p>{product.text}</p>
+              <p class="price">{site.prices.sample}</p>
+              <p class="price-note">{t.priceNote}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+    <section class="sample-block sample-card" id="sample-note" aria-labelledby="order-title">
+      <h2 id="order-title">{t.orderTitle}</h2>
+      <p>{t.order}</p>
+      <p><a class="btn btn-secondary" href="#sample-note">{t.orderButton}</a></p>
+      <h2 id="note-title">{t.noteTitle}</h2>
+      <p>{t.note}</p>
+    </section>
+    <p class="sample-footer"><a href={localizedPath(lang, '/')}>{t.back}</a></p>
+  </main>
+</Base>
